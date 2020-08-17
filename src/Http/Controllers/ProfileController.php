@@ -22,7 +22,7 @@ class ProfileController extends Controller
      */
     public function customerProfile()
     {
-        return view('features.commerce.profile.details');
+        return view('market::profile.details');
     }
 
     /**
@@ -44,7 +44,7 @@ class ProfileController extends Controller
      */
     public function addCoupon(Request $request)
     {
-        return view('features.commerce.profile.coupon');
+        return view('market::profile.coupon');
     }
 
     /**

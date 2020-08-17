@@ -176,7 +176,7 @@ class ProductService
      */
     public static function productDetails($product)
     {
-        return view('features.commerce.products.details', ['product' => $product])->render();
+        return view('market::products.details', ['product' => $product])->render();
     }
 
     /**
@@ -208,9 +208,9 @@ class ProductService
 
         foreach ($variants as $variant) {
             if (self::isArrayVariant($variant->value)) {
-                $variantHtml .= view('features.commerce.products.variants.select', ['variant' => $variant])->render();
+                $variantHtml .= view('market::products.variants.select', ['variant' => $variant])->render();
             } else {
-                $variantHtml .= view('features.commerce.products.variants.other', ['variant' => $variant])->render();
+                $variantHtml .= view('market::products.variants.other', ['variant' => $variant])->render();
             }
         }
 

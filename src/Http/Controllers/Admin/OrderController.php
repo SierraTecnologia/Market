@@ -23,7 +23,7 @@ class OrderController extends SitecController
     {
         $orders = $this->service->paginated();
 
-        return view('admin.features.commerce.orders.index')
+        return view('market::admin.orders.index')
             ->with('pagination', $orders->render())
             ->with('orders', $orders);
     }
@@ -37,7 +37,7 @@ class OrderController extends SitecController
     {
         $orders = $this->service->search($request->term);
 
-        return view('admin.features.commerce.orders.index')
+        return view('market::admin.orders.index')
             ->with('orders', $orders[0]->get())
             ->with('pagination', $orders[2])
             ->with('term', $orders[1]);
@@ -54,7 +54,7 @@ class OrderController extends SitecController
     {
         $order = $this->service->find($id);
 
-        return view('admin.features.commerce.orders.edit')->with('order', $order);
+        return view('market::admin.orders.edit')->with('order', $order);
     }
 
     /**
@@ -68,7 +68,7 @@ class OrderController extends SitecController
     {
         $orderItem = app(OrderItemService::class)->find($id);
 
-        return view('admin.features.commerce.orders.item')->with('orderItem', $orderItem);
+        return view('market::admin.orders.item')->with('orderItem', $orderItem);
     }
 
     /**
@@ -120,9 +120,9 @@ class OrderController extends SitecController
         $result = $this->service->cancel($request->id);
 
         if ($result) {
-            return redirect(config('siravel.backend-route-prefix', 'siravel').'/orders')->with('success', 'Successfully cancelled');
+            return redirect(config('market.admin-route-prefix', 'admin').'/orders')->with('success', 'Successfully cancelled');
         }
 
-        return redirect(config('siravel.backend-route-prefix', 'siravel').'/orders')->with('error', 'Failed to cancel');
+        return redirect(config('market.admin-route-prefix', 'admin').'/orders')->with('error', 'Failed to cancel');
     }
 }

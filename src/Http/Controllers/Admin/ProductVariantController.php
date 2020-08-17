@@ -58,7 +58,7 @@ class ProductVariantController extends SitecController
             Market::notification('Failed to add variant. Missing Key or Value.', 'warning');
         }
 
-        return redirect(route(config('siravel.backend-route-prefix', 'siravel').'.products.edit', $id).'?tab=variants');
+        return redirect(route(config('market.admin-route-prefix', 'admin').'.products.edit', $id).'?tab=variants');
     }
 
     /**

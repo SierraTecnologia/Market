@@ -38,7 +38,7 @@ class AnalyticsController extends SitecController
         $subscriptions = $this->analyticsService->getSubscriptions();
         $data = $this->analyticsService->mergeTransactionsAndSubscriptions($months);
 
-        return view('admin.features.commerce.analytics')
+        return view('market::admin.analytics')
             ->with('transactions', $transactions)
             ->with('balanceValues', [round($balanceValues['refunds'], 2), round($balanceValues['income'], 2)])
             ->with('transactionDays', $data['days'])

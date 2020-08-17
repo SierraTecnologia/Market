@@ -18,6 +18,11 @@ use Muleta\Traits\Providers\ConsoleTools;
 
 use Market\Facades\Market as MarketFacade;
 use Illuminate\Contracts\Events\Dispatcher;
+use Market\Interfaces\Helpers\StoreHelper;
+use Market\Services\CartService;
+use Market\Services\CustomerProfileService;
+use Market\Services\LogisticService;
+use Market\Services\ProductService;
 
 
 class MarketProvider extends ServiceProvider
@@ -42,6 +47,66 @@ class MarketProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
+        [
+            'text'        => 'Vendas',
+            'url'         => 'admin/commerce-analytics',
+            'icon'        => 'laptop',
+            'icon_color'  => 'red',
+            'label_color' => 'success',
+            'space'     => 'painel',
+            'level'       => 2,
+            'feature' => 'commerce',
+        ],
+        [
+            'text'        => 'Products',
+            'url'         => 'admin/products',
+            'icon'        => 'laptop',
+            'icon_color'  => 'red',
+            'label_color' => 'success',
+            'space'     => 'painel',
+            'level'       => 2,
+            'feature' => 'commerce',
+        ],
+        [
+            'text'        => 'Plans',
+            'url'         => 'admin/plans',
+            'icon'        => 'laptop',
+            'icon_color'  => 'red',
+            'label_color' => 'success',
+            'space'     => 'painel',
+            'level'       => 2,
+            'feature' => 'commerce',
+        ],
+        [
+            'text'        => 'Coupons',
+            'url'         => 'admin/coupons',
+            'icon'        => 'laptop',
+            'icon_color'  => 'red',
+            'label_color' => 'success',
+            'space'     => 'painel',
+            'level'       => 2,
+            'feature' => 'commerce',
+        ],
+        [
+            'text'        => 'Transactions',
+            'url'         => 'admin/transactions',
+            'icon'        => 'laptop',
+            'icon_color'  => 'red',
+            'label_color' => 'success',
+            'space'     => 'painel',
+            'level'       => 2,
+            'feature' => 'commerce',
+        ],
+        [
+            'text'        => 'orders',
+            'url'         => 'admin/orders',
+            'icon'        => 'laptop',
+            'icon_color'  => 'red',
+            'label_color' => 'success',
+            'space'     => 'painel',
+            'level'       => 2,
+            'feature' => 'commerce',
+        ],
         // [
         //     'text' => 'Market',
         //     'icon' => 'fas fa-fw fa-search',
@@ -77,6 +142,7 @@ class MarketProvider extends ServiceProvider
      */
     public function boot()
     {
+        $loader = AliasLoader::getInstance();
         
         // Register configs, migrations, etc
         $this->registerDirectories();
@@ -87,6 +153,8 @@ class MarketProvider extends ServiceProvider
         });
 
         $this->loadLogger();
+
+        $loader->alias('StoreHelper', StoreHelper::class);
     }
 
     /**
@@ -161,6 +229,22 @@ class MarketProvider extends ServiceProvider
         //         return route('rica.market.assets').'?path='.urlencode($path);
         //     }
         // }
+
+        $this->app->bind('ProductService', function ($app) {
+            return app()->make(ProductService::class);
+        });
+
+        $this->app->bind('CartService', function ($app) {
+            return app()->make(CartService::class);
+        });
+
+        $this->app->bind('LogisticService', function ($app) {
+            return app()->make(LogisticService::class);
+        });
+
+        $this->app->bind('CustomerProfileService', function ($app) {
+            return app()->make(CustomerProfileService::class);
+        });
     }
 
     /**

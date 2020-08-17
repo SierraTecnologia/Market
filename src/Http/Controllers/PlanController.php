@@ -32,7 +32,7 @@ class PlanController extends Controller
             abort(404);
         }
 
-        return view('features.commerce.plans.all')->with('plans', $plans);
+        return view('market::plans.all')->with('plans', $plans);
     }
 
     /**
@@ -50,6 +50,6 @@ class PlanController extends Controller
             abort(404);
         }
 
-        return view('features.commerce.plans.show')->with('plan', $plan);
+        return view('market::plans.show')->with('plan', $plan);
     }
 }

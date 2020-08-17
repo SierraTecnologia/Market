@@ -24,7 +24,7 @@ class PlanController extends Controller
         $this->service->collectNewPlans();
         $plans = $this->service->paginated();
 
-        return view('admin.features.commerce.plans.index')->with('plans', $plans);
+        return view('market::admin.plans.index')->with('plans', $plans);
     }
 
     /**
@@ -36,7 +36,7 @@ class PlanController extends Controller
     {
         $plans = $this->service->search($request->term);
 
-        return view('admin.features.commerce.plans.index')
+        return view('market::admin.plans.index')
             ->with('term', $request->term)
             ->with('plans', $plans);
     }
@@ -48,7 +48,7 @@ class PlanController extends Controller
      */
     public function create()
     {
-        return view('admin.features.commerce.plans.create');
+        return view('market::admin.plans.create');
     }
 
     /**
@@ -63,7 +63,7 @@ class PlanController extends Controller
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
-            return redirect(config('siravel.backend-route-prefix', 'siravel').'/plans/'.$result->id.'/edit')->with('success', 'Successfully created');
+            return redirect(config('market.admin-route-prefix', 'admin').'/plans/'.$result->id.'/edit')->with('success', 'Successfully created');
         }
 
         return redirect('admin.commerce.plans')->with('error', 'Failed to create');
@@ -81,7 +81,7 @@ class PlanController extends Controller
         $plan = $this->service->find($id);
         $customers = $this->service->getSubscribers($plan);
 
-        return view('admin.features.commerce.plans.edit')
+        return view('market::admin.plans.edit')
             ->with('customers', $customers)
             ->with('plan', $plan);
     }
@@ -155,9 +155,9 @@ class PlanController extends Controller
         $result = $this->service->destroy($id);
 
         if ($result) {
-            return redirect(config('siravel.backend-route-prefix', 'siravel').'/plans')->with('success', 'Successfully deleted');
+            return redirect(config('market.admin-route-prefix', 'admin').'/plans')->with('success', 'Successfully deleted');
         }
 
-        return redirect(config('siravel.backend-route-prefix', 'siravel').'/plans')->with('error', 'Failed to delete');
+        return redirect(config('market.admin-route-prefix', 'admin').'/plans')->with('error', 'Failed to delete');
     }
 }

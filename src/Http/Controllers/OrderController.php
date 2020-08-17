@@ -22,7 +22,7 @@ class OrderController extends Controller
     {
         $orders = $this->orders->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('siravel.pagination'));
 
-        return view('features.commerce.orders.all')->with('orders', $orders);
+        return view('market::orders.all')->with('orders', $orders);
     }
 
     /**
@@ -36,7 +36,7 @@ class OrderController extends Controller
     {
         $order = $this->orders->getByCustomerAndUuid(auth()->id(), $id);
 
-        return view('features.commerce.orders.order')->with('order', $order);
+        return view('market::orders.order')->with('order', $order);
     }
 
     /**

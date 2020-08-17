@@ -159,7 +159,7 @@ class MarketController extends Base
 
     //     //     return $this->dataTable->eloquent($query)->make(true);
     //     // }
-    //     // return view('admin.orders.index');
+    //     // return view('market::admin.orders.index');
 
     //     // USando Service //public function index(UsersDataTable $dataTable)
     //     // return $dataTable->render('orders.index');
@@ -170,7 +170,7 @@ class MarketController extends Base
     //     } else {
     //         $orders = Market::orderBy('id', 'DESC')->simplePaginate(50);
     //     }
-    //     return view('admin.orders.index', compact('orders'));
+    //     return view('market::admin.orders.index', compact('orders'));
     // }
 
     // /**
@@ -180,7 +180,7 @@ class MarketController extends Base
     //  */
     // public function create()
     // {
-    //     return view('admin.orders.create');
+    //     return view('market::admin.orders.create');
     // }
 
     // /**
@@ -214,7 +214,7 @@ class MarketController extends Base
     // public function show($id)
     // {
     //     $order = Market::findOrFail($id);
-    //     return view('admin.orders.show', compact('order'));
+    //     return view('market::admin.orders.show', compact('order'));
     // }
     
 
@@ -228,7 +228,7 @@ class MarketController extends Base
     // {
     //     $order = Market::find($id);
 
-    //     return view('admin.orders.edit', compact('order'));
+    //     return view('market::admin.orders.edit', compact('order'));
     // }
 
     // /**

@@ -29,7 +29,7 @@ class ProductController extends Controller
             abort(404);
         }
 
-        return view('features.commerce.products.all')->with('products', $products);
+        return view('market::products.all')->with('products', $products);
     }
 
     /**
@@ -47,7 +47,7 @@ class ProductController extends Controller
             abort(404);
         }
 
-        return view('features.commerce.products.show')->with('product', $product);
+        return view('market::products.show')->with('product', $product);
     }
 
     /**
@@ -61,6 +61,6 @@ class ProductController extends Controller
     {
         $products = $this->repository->favorites();
 
-        return view('features.commerce.products.favorites')->with('products', $products);
+        return view('market::products.favorites')->with('products', $products);
     }
 }

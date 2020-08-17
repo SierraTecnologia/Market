@@ -25,7 +25,7 @@ class CouponController extends SitecController
         // $this->service->collectNewCoupons();
         $coupons = $this->service->paginated();
 
-        return view('admin.features.commerce.coupons.index')->with('coupons', $coupons);
+        return view('market::admin.coupons.index')->with('coupons', $coupons);
     }
 
     /**
@@ -37,7 +37,7 @@ class CouponController extends SitecController
     {
         $coupons = $this->service->search($request->term);
 
-        return view('admin.features.commerce.coupons.index')
+        return view('market::admin.coupons.index')
             ->with('term', $request->term)
             ->with('coupons', $coupons);
     }
@@ -49,7 +49,7 @@ class CouponController extends SitecController
      */
     public function create()
     {
-        return view('admin.features.commerce.coupons.create');
+        return view('market::admin.coupons.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class CouponController extends SitecController
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
-            return redirect(config('siravel.backend-route-prefix', 'siravel').'/coupons/'.$result->id)
+            return redirect(config('market.admin-route-prefix', 'admin').'/coupons/'.$result->id)
                 ->with('success', 'Successfully created');
         }
 
@@ -82,7 +82,7 @@ class CouponController extends SitecController
     {
         $coupon = $this->service->find($id);
 
-        return view('admin.features.commerce.coupons.show')
+        return view('market::admin.coupons.show')
             ->with('coupon', $coupon);
     }
 
@@ -98,11 +98,11 @@ class CouponController extends SitecController
         $result = $this->service->destroy($id);
 
         if ($result) {
-            return redirect(config('siravel.backend-route-prefix', 'siravel').'/coupons')
+            return redirect(config('market.admin-route-prefix', 'admin').'/coupons')
                 ->with('success', 'Successfully deleted');
         }
 
-        return redirect(config('siravel.backend-route-prefix', 'siravel').'/coupons')
+        return redirect(config('market.admin-route-prefix', 'admin').'/coupons')
             ->with('error', 'Failed to delete');
     }
 }

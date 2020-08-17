@@ -32,7 +32,7 @@ class StoreController extends Controller
             abort(404);
         }
 
-        return view('features.commerce.storefront')
+        return view('market::storefront')
             ->with('plans', $plans)
             ->with('products', $products);
     }

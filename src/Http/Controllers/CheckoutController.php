@@ -30,7 +30,7 @@ class CheckoutController extends Controller
     {
         $products = $this->cart->contents();
 
-        return view('features.commerce.checkout.confirm')->with('products', $products);
+        return view('market::checkout.confirm')->with('products', $products);
     }
 
     /**
@@ -42,7 +42,7 @@ class CheckoutController extends Controller
     {
         $products = $this->cart->contents();
 
-        return view('features.commerce.checkout.payment')->with('products', $products);
+        return view('market::checkout.payment')->with('products', $products);
     }
 
     /**
@@ -116,7 +116,7 @@ class CheckoutController extends Controller
     {
         $products = $this->cart->contents();
 
-        return view('features.commerce.checkout.complete')->with('products', $products);
+        return view('market::checkout.complete')->with('products', $products);
     }
 
     /**
@@ -126,7 +126,7 @@ class CheckoutController extends Controller
      */
     public function failed()
     {
-        return view('features.commerce.checkout.failed');
+        return view('market::checkout.failed');
     }
 
     /**

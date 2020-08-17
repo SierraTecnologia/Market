@@ -38,7 +38,7 @@ class SubscriptionController extends Controller
 
         app(LogisticService::class)->afterSubscription(auth()->user(), $plan);
 
-        return view('features.commerce.subscriptions.success')->with('plan', $plan);
+        return view('market::subscriptions.success')->with('plan', $plan);
     }
 
     /**
@@ -50,7 +50,7 @@ class SubscriptionController extends Controller
     {
         $subscriptions = auth()->user()->meta->subscriptions()->orderBy('created_at', 'DESC')->paginate(config('siravel.pagination'));
 
-        return view('features.commerce.subscriptions.all')->with('subscriptions', $subscriptions);
+        return view('market::subscriptions.all')->with('subscriptions', $subscriptions);
     }
 
     /**
@@ -64,7 +64,7 @@ class SubscriptionController extends Controller
     {
         $subscription = auth()->user()->meta->subscription(Crypto::decrypt($name));
 
-        return view('features.commerce.subscriptions.subscription')->with('subscription', $subscription);
+        return view('market::subscriptions.subscription')->with('subscription', $subscription);
     }
 
     /**

@@ -31,7 +31,7 @@ class ProductController extends SitecController
     {
         $products = $this->service->paginated();
 
-        return view('admin.features.commerce.products.index')
+        return view('market::admin.products.index')
             ->with('pagination', $products->render())
             ->with('products', $products);
     }
@@ -45,7 +45,7 @@ class ProductController extends SitecController
     {
         $products = $this->service->search($request->term);
 
-        return view('admin.features.commerce.products.index')
+        return view('market::admin.products.index')
             ->with('term', $request->term)
             ->with('pagination', $products->render())
             ->with('products', $products);
@@ -58,7 +58,7 @@ class ProductController extends SitecController
      */
     public function create()
     {
-        return view('admin.features.commerce.products.create');
+        return view('market::admin.products.create');
     }
 
     /**
@@ -73,10 +73,10 @@ class ProductController extends SitecController
         $result = $this->service->create($request->except('_token'));
 
         if ($result) {
-            return redirect(config('siravel.backend-route-prefix', 'siravel').'/products/'.$result->id.'/edit')->with('success', 'Successfully created');
+            return redirect(config('market.admin-route-prefix', 'admin').'/products/'.$result->id.'/edit')->with('success', 'Successfully created');
         }
 
-        return redirect(config('siravel.backend-route-prefix', 'siravel').'/products')->with('error', 'Failed to create');
+        return redirect(config('market.admin-route-prefix', 'admin').'/products')->with('error', 'Failed to create');
     }
 
     /**
@@ -105,7 +105,7 @@ class ProductController extends SitecController
             'tabs' => $tabs,
         ];
 
-        return view('admin.features.commerce.products.edit', $data);
+        return view('market::admin.products.edit', $data);
     }
 
     /**
@@ -211,9 +211,9 @@ class ProductController extends SitecController
         $result = $this->service->destroy($id);
 
         if ($result) {
-            return redirect(config('siravel.backend-route-prefix', 'siravel').'/products')->with('success', 'Successfully deleted');
+            return redirect(config('market.admin-route-prefix', 'admin').'/products')->with('success', 'Successfully deleted');
         }
 
-        return redirect(config('siravel.backend-route-prefix', 'siravel').'/products')->with('error', 'Failed to delete');
+        return redirect(config('market.admin-route-prefix', 'admin').'/products')->with('error', 'Failed to delete');
     }
 }

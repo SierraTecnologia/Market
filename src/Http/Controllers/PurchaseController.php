@@ -22,7 +22,7 @@ class PurchaseController extends Controller
     {
         $purchases = $this->transactions->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('siravel.pagination'));
 
-        return view('features.commerce.purchases.all')
+        return view('market::purchases.all')
             ->with('purchases', $purchases);
     }
 
@@ -35,7 +35,7 @@ class PurchaseController extends Controller
     {
         $purchase = $this->transactions->getByCustomerAndUuid(auth()->id(), $id);
 
-        return view('features.commerce.purchases.purchase')
+        return view('market::purchases.purchase')
             ->with('purchase', $purchase);
     }
 
@@ -48,6 +48,6 @@ class PurchaseController extends Controller
     {
         $purchase = $this->transactions->requestRefund(auth()->id(), $id);
 
-        return view('features.commerce.purchases.refund');
+        return view('market::purchases.refund');
     }
 }

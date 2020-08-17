@@ -23,10 +23,10 @@ class CardController extends Controller
     public function getCard()
     {
         if (is_null(auth()->user()->meta->sitecpayment_id)) {
-            return view('features.commerce.profile.card.set');
+            return view('market::profile.card.set');
         }
 
-        return view('features.commerce.profile.card.get');
+        return view('market::profile.card.get');
     }
 
     /**
@@ -36,7 +36,7 @@ class CardController extends Controller
      */
     public function changeCard()
     {
-        return view('features.commerce.profile.card.change');
+        return view('market::profile.card.change');
     }
 
     /**

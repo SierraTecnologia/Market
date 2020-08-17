@@ -28,7 +28,7 @@ class CartController extends Controller
     {
         $products = $this->cart->contents();
 
-        return view('features.commerce.cart.all')->with('products', $products);
+        return view('market::cart.all')->with('products', $products);
     }
 
     /**
