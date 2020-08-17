@@ -5,7 +5,7 @@ namespace Market\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Market\Http\Controllers\Controller;
 use Market\Services\PlanService;
-use Market\Http\Requests\Commerce\PlanRequest;
+use Market\Http\Requests\PlanRequest;
 
 class PlanController extends Controller
 {

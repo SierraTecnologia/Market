@@ -1,6 +1,6 @@
 <?php
 
-namespace Market\Http\Requests\Commerce;
+namespace Market\Http\Requests;
 
 use Illuminate\Support\Facades\Gate;
 use Market\Http\Requests\Request;

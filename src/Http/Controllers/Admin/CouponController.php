@@ -3,8 +3,8 @@
 namespace Market\Http\Controllers\Admin;
 
 use Market\Http\Controllers\SitecController;
-use Market\Http\Requests\Commerce\CouponRequest;
-use Market\Http\Requests\Commerce\PlanRequest;
+use Market\Http\Requests\CouponRequest;
+use Market\Http\Requests\PlanRequest;
 use Market\Services\CouponService;
 use Illuminate\Http\Request;
 

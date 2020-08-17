@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Market\Http\Controllers\SitecController;
 use Market\Repositories\ImageRepository;
 use Market\Repositories\ProductVariantRepository;
-use Market\Http\Requests\Commerce\ProductRequest;
+use Market\Http\Requests\ProductRequest;
 use Market\Services\ProductService;
 
 class ProductController extends SitecController
