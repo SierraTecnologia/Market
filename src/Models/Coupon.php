@@ -6,11 +6,9 @@ use Carbon\Carbon;
 use Market\Models\MarketModel;
 use Market\Services\CartService;
 
-use Market\Models\Traits\BusinessTrait;
 
 class Coupon extends MarketModel
 {
-    use BusinessTrait;
     
     public $table = 'coupons';
 

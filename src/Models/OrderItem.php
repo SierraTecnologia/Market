@@ -8,11 +8,9 @@ use Market\Models\Variant;
 use Market\Models\MarketModel;
 use Market\Models\Transaction;
 
-use Market\Models\Traits\BusinessTrait;
 
 class OrderItem extends MarketModel
 {
-    use BusinessTrait;
     
     public $table = 'order_items';
 

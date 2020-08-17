@@ -5,11 +5,9 @@ namespace Market\Models;
 use Market\Models\MarketModel;
 use Market\Models\Product;
 
-use Market\Models\Traits\BusinessTrait;
 
 class Favorite extends MarketModel
 {
-    use BusinessTrait;
     
     public $table = 'favorites';
 

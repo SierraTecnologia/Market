@@ -5,11 +5,9 @@ namespace Market\Models;
 use Market\Models\MarketModel;
 use Market\Models\OrderItem;
 
-use Market\Models\Traits\BusinessTrait;
 
 class Refund extends MarketModel
 {
-    use BusinessTrait;
     
     public $table = 'refunds';
 

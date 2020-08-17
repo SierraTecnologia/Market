@@ -6,11 +6,9 @@ use Market\Models\MarketModel;
 use Market\Models\Order;
 use Market\Models\Refund;
 
-use Market\Models\Traits\BusinessTrait;
 
 class Transaction extends MarketModel
 {
-    use BusinessTrait;
     
     public $table = 'transactions';
 

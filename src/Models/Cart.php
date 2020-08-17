@@ -4,11 +4,9 @@ namespace Market\Models;
 
 use Market\Models\MarketModel;
 
-use Market\Models\Traits\BusinessTrait;
 
 class Cart extends MarketModel
 {
-    use BusinessTrait;
     
     public $table = 'cart';
 

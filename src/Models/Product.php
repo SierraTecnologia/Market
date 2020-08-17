@@ -9,11 +9,9 @@ use Stalker\Services\Midia\FileService;
 use Market\Services\CartService;
 use Market\Services\ProductService;
 
-use Market\Models\Traits\BusinessTrait;
 
 class Product extends MarketModel
 {
-    use BusinessTrait;
     
     public $table = 'products';
 
