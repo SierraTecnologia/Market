@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Repositories\Commerce;
+namespace Market\Repositories;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
-use Siravel\Models\Commerce\Transaction;
-use Siravel\Services\Commerce\LogisticService;
+use Market\Models\Transaction;
+use Market\Services\LogisticService;
 
 class TransactionRepository
 {

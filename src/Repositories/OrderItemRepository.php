@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Repositories\Commerce;
+namespace Market\Repositories;
 
 use Illuminate\Support\Facades\Schema;
-use Siravel\Models\Commerce\OrderItem;
+use Market\Models\OrderItem;
 
 class OrderItemRepository
 {

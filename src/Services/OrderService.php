@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
-use Siravel\Models\Commerce\Refund;
+use Market\Models\Refund;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Illuminate\Support\Facades\Config;
-use Siravel\Services\Commerce\TransactionService;
-use Siravel\Repositories\Commerce\OrderRepository;
+use Market\Services\TransactionService;
+use Market\Repositories\OrderRepository;
 
 class OrderService
 {

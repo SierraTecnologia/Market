@@ -1,16 +1,16 @@
 <?php
 
-namespace Siravel\Models\Commerce;
+namespace Market\Models;
 
-use Siravel\Models\Commerce\Order;
-use Siravel\Models\Commerce\Product;
-use Siravel\Models\Commerce\Variant;
-use Siravel\Models\SiravelModel;
-use Siravel\Models\Commerce\Transaction;
+use Market\Models\Order;
+use Market\Models\Product;
+use Market\Models\Variant;
+use Market\Models\MarketModel;
+use Market\Models\Transaction;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Market\Models\Traits\BusinessTrait;
 
-class OrderItem extends SiravelModel
+class OrderItem extends MarketModel
 {
     use BusinessTrait;
     

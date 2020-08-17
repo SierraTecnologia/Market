@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
 use Carbon\Carbon;
 use SierraTecnologia\Coupon;

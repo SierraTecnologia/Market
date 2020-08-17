@@ -1,15 +1,15 @@
 <?php
 
-namespace Siravel\Models\Commerce;
+namespace Market\Models;
 
 use App\Models\User;
-use Siravel\Models\SiravelModel;
-use Siravel\Models\Commerce\OrderItem;
-use Siravel\Models\Commerce\Transaction;
+use Market\Models\MarketModel;
+use Market\Models\OrderItem;
+use Market\Models\Transaction;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Market\Models\Traits\BusinessTrait;
 
-class Order extends SiravelModel
+class Order extends MarketModel
 {
     use BusinessTrait;
     

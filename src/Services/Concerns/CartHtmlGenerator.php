@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Commerce\Concerns;
+namespace Market\Services\Concerns;
 
 trait CartHtmlGenerator
 {

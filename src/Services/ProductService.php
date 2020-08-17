@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
-use Siravel\Facades\RiCaServiceFacade as Siravel;
+use Market\Facades\RiCaServiceFacade as Market;
 use Illuminate\Support\Facades\Config;
 use Stalker\Services\Midia\FileService;
-use Siravel\Repositories\Commerce\ProductRepository;
-use Siravel\Repositories\Commerce\ProductVariantRepository;
+use Market\Repositories\ProductRepository;
+use Market\Repositories\ProductVariantRepository;
 
 class ProductService
 {
@@ -56,7 +56,7 @@ class ProductService
      */
     public function create($payload)
     {
-        $payload['url'] = Siravel::convertToURL($payload['url']);
+        $payload['url'] = Market::convertToURL($payload['url']);
 
         if (isset($payload['file'])) {
             $downloadFile = app(FileService::class)->saveFile($payload['file'], 'downloads');
@@ -105,7 +105,7 @@ class ProductService
     {
         $product = $this->repo->find($id);
 
-        $payload['url'] = Siravel::convertToURL($payload['url']);
+        $payload['url'] = Market::convertToURL($payload['url']);
 
         if (isset($payload['hero_image'])) {
             $heroFile = app(FileService::class)->saveFile($payload['hero_image'], 'heroes', [], true);

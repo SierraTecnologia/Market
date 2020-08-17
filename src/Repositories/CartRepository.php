@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Repositories\Commerce;
+namespace Market\Repositories;
 
 use Illuminate\Support\Facades\Session;
-use Siravel\Models\Commerce\Cart;
-use Siravel\Models\Commerce\Variant;
+use Market\Models\Cart;
+use Market\Models\Variant;
 
 class CartRepository
 {

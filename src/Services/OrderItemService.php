@@ -1,15 +1,15 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
 use Carbon\Carbon;
 use SierraTecnologia\Error\InvalidRequest;
 use SierraTecnologia\Crypto\Services\Crypto;
-use Siravel\Models\Commerce\Refund;
-use Siravel\Repositories\Commerce\OrderItemRepository;
-use Siravel\Services\Commerce\CartService;
-use Siravel\Services\Commerce\LogisticService;
-use Siravel\Services\Commerce\TransactionService;
+use Market\Models\Refund;
+use Market\Repositories\OrderItemRepository;
+use Market\Services\CartService;
+use Market\Services\LogisticService;
+use Market\Services\TransactionService;
 
 class OrderItemService
 {

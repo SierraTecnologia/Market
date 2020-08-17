@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace arket\Cacheable;
+namespace Market\Cacheable;
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Builder;

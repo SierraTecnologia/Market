@@ -1,14 +1,14 @@
 <?php
 
-namespace Siravel\Models\Commerce;
+namespace Market\Models;
 
 use Carbon\Carbon;
-use Siravel\Models\SiravelModel;
-use Siravel\Services\Commerce\CartService;
+use Market\Models\MarketModel;
+use Market\Services\CartService;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Market\Models\Traits\BusinessTrait;
 
-class Coupon extends SiravelModel
+class Coupon extends MarketModel
 {
     use BusinessTrait;
     

@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Repositories\Commerce;
+namespace Market\Repositories;
 
 use Carbon\Carbon;
-use Siravel\Models\Commerce\Favorite;
+use Market\Models\Favorite;
 
 class FavoriteRepository
 {

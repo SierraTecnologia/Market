@@ -1,14 +1,14 @@
 <?php
 
-namespace Siravel\Models\Commerce;
+namespace Market\Models;
 
-use Siravel\Models\SiravelModel;
-use Siravel\Models\Commerce\Order;
-use Siravel\Models\Commerce\Refund;
+use Market\Models\MarketModel;
+use Market\Models\Order;
+use Market\Models\Refund;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Market\Models\Traits\BusinessTrait;
 
-class Transaction extends SiravelModel
+class Transaction extends MarketModel
 {
     use BusinessTrait;
     

@@ -78,6 +78,6 @@
 @section('javascript')
 
     @parent
-    {!! Minify::javascript(Siravel::moduleAsset('siravel', 'js/products.js', 'application/javascript')) !!}
+    {!! Minify::javascript(Market::moduleAsset('siravel', 'js/products.js', 'application/javascript')) !!}
 
 @endsection

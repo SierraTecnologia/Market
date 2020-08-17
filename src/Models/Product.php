@@ -1,17 +1,17 @@
 <?php
 
-namespace Siravel\Models\Commerce;
+namespace Market\Models;
 
 use Stalker\Models\Image;
 use App\Models\ProductImage;
-use Siravel\Models\SiravelModel;
+use Market\Models\MarketModel;
 use Stalker\Services\Midia\FileService;
-use Siravel\Services\Commerce\CartService;
-use Siravel\Services\Commerce\ProductService;
+use Market\Services\CartService;
+use Market\Services\ProductService;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Market\Models\Traits\BusinessTrait;
 
-class Product extends SiravelModel
+class Product extends MarketModel
 {
     use BusinessTrait;
     

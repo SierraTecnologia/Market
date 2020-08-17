@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Models\Commerce;
+namespace Market\Models;
 
-use Siravel\Models\SiravelModel;
+use Market\Models\MarketModel;
 
-use Siravel\Models\Traits\BusinessTrait;
+use Market\Models\Traits\BusinessTrait;
 
-class Plan extends SiravelModel
+class Plan extends MarketModel
 {
     use BusinessTrait;
     

@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
 use App\Models\UserMeta;
 use Facilitador\Services\UserService;
@@ -9,7 +9,7 @@ use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
 use Support\Services\RiCaService;
-use Siravel\Models\Commerce\Coupon;
+use Market\Models\Coupon;
 
 class CouponService
 {

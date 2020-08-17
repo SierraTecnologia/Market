@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
-use Siravel\Models\Commerce\Coupon;
-use Siravel\Models\Commerce\Transaction;
-use Siravel\Services\Commerce\TransactionService;
+use Market\Models\Coupon;
+use Market\Models\Transaction;
+use Market\Services\TransactionService;
 use SierraTecnologia\Crypto\Services\Crypto;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;

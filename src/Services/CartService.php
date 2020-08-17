@@ -1,15 +1,15 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
-use Siravel\Services\StoreLogistics;
-use Siravel\Models\Commerce\Coupon;
-use Siravel\Models\Commerce\Currency;
-use Siravel\Models\Commerce\Variant;
-use Siravel\Repositories\Commerce\CartRepository;
-use Siravel\Repositories\Commerce\CartSessionRepository;
-use Siravel\Repositories\Commerce\TransactionRepository;
-use Siravel\Services\Commerce\Concerns\CartHtmlGenerator;
+use Market\Services\StoreLogistics;
+use Market\Models\Coupon;
+use Market\Models\Currency;
+use Market\Models\Variant;
+use Market\Repositories\CartRepository;
+use Market\Repositories\CartSessionRepository;
+use Market\Repositories\TransactionRepository;
+use Market\Services\Concerns\CartHtmlGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 

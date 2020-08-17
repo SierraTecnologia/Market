@@ -1,5 +1,5 @@
 
-<li class="sidebar-header"><span><span class="fa fa-bank"></span> E-Siravel</span></li>
+<li class="sidebar-header"><span><span class="fa fa-bank"></span> E-Market</span></li>
 
 <li class="nav-item @if (Request::is(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/siravel-analytics') || Request::is(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/siravel-analytics/*')) active @endif">
     <a class="nav-link" href="{{ url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/siravel-analytics') }}"><span class="fa fa-fw fa-line-chart"></span> Analytics</a>

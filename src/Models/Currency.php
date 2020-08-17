@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Commerce;
+namespace Market\Models;
 
 class Currency
 {

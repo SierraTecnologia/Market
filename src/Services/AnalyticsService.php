@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
 use Carbon\Carbon;
 use SierraTecnologia\Cashier\Subscription;
-use Siravel\Models\Commerce\Transaction;
+use Market\Models\Transaction;
 
 class AnalyticsService
 {

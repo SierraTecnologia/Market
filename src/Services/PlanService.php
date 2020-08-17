@@ -1,13 +1,13 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
 use App\Models\UserMeta;
 use Facilitador\Services\UserService;
 use Exception;
 use Illuminate\Support\Facades\Schema;
 use SierraTecnologia\Cashier\Subscription;
-use Siravel\Models\Commerce\Plan;
+use Market\Models\Plan;
 use Support\Services\RiCaService;
 
 class PlanService
@@ -210,7 +210,7 @@ class PlanService
     /**
      * Get subscribers.
      *
-     * @param Siravel\Models\Commerce\Plan $plan
+     * @param Market\Models\Plan $plan
      *
      * @return Illuminate\Support\Collection
      */

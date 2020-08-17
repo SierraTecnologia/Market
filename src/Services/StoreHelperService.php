@@ -1,13 +1,13 @@
 <?php
 
-namespace Siravel\Services\Commerce;
+namespace Market\Services;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Cache;
-use Siravel\Models\Commerce\Plan;
-use Siravel\Services\Commerce\CartService;
-use Siravel\Services\Commerce\CustomerProfileService;
-use Siravel\Services\Commerce\LogisticService;
+use Market\Models\Plan;
+use Market\Services\CartService;
+use Market\Services\CustomerProfileService;
+use Market\Services\LogisticService;
 
 class StoreHelperService
 {

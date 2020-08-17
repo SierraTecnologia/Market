@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Repositories\Commerce;
+namespace Market\Repositories;
 
-use Siravel\Models\Commerce\Product;
-use Siravel\Repositories\Commerce\FavoriteRepository;
+use Market\Models\Product;
+use Market\Repositories\FavoriteRepository;
 use Illuminate\Support\Facades\Schema;
 
 class ProductRepository

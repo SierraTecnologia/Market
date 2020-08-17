@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Services\Commerce\Concerns;
+namespace Market\Services\Concerns;
 
-use Siravel\Models\Commerce\Favorite;
-use Siravel\Models\Commerce\Product;
+use Market\Models\Favorite;
+use Market\Models\Product;
 
 trait hasFavorites
 {

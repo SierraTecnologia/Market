@@ -4,7 +4,7 @@
 
 @section('stylesheets')
     @parent
-    <link rel="stylesheet" type="text/css" href="{{ Siravel::moduleAsset('siravel', 'css/store.css', 'text/css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Market::moduleAsset('siravel', 'css/store.css', 'text/css') }}">
 @stop
 
 @section('content')
@@ -42,7 +42,7 @@
 
 @section('javascript')
     @parent
-    <script type="text/javascript" src="{!! Siravel::moduleAsset('siravel', 'js/plans.js', 'application/javascript') !!}"></script>
+    <script type="text/javascript" src="{!! Market::moduleAsset('siravel', 'js/plans.js', 'application/javascript') !!}"></script>
     <script type="text/javascript">
         _visualizeThePlan();
     </script>
