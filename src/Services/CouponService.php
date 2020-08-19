@@ -3,13 +3,13 @@
 namespace Market\Services;
 
 use App\Models\UserMeta;
-use Facilitador\Services\UserService;
+use App\Services\UserService;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Support\Facades\Schema;
+use Market\Models\Coupon;
 use SierraTecnologia\Cashier\Subscription;
 use Support\Services\RiCaService;
-use Market\Models\Coupon;
 
 class CouponService
 {

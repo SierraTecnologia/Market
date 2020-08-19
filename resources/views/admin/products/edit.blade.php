@@ -10,9 +10,9 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('siravel::products.breadcrumbs', ['location' => ['edit']])
+        @include('market::products.breadcrumbs', ['location' => ['edit']])
 
-        @include('siravel::products.tabs', $tabs)
+        @include('market::products.tabs', $tabs)
     </div>
 
 @endsection

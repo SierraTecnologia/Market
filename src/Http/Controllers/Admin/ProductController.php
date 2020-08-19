@@ -2,24 +2,24 @@
 
 namespace Market\Http\Controllers\Admin;
 
-use Market;
 use Illuminate\Http\Request;
+use Market;
 use Market\Http\Controllers\SitecController;
-use Market\Repositories\ImageRepository;
-use Market\Repositories\ProductVariantRepository;
 use Market\Http\Requests\ProductRequest;
+// use Market\Repositories\ImageRepository;
+use Market\Repositories\ProductVariantRepository;
 use Market\Services\ProductService;
 
 class ProductController extends SitecController
 {
     public function __construct(
         ProductService $productService,
-        ProductVariantRepository $productVariantRepository,
-        ImageRepository $imageRepository
+        ProductVariantRepository $productVariantRepository
+        // ImageRepository $imageRepository
     ) {
         $this->service = $productService;
         $this->productVariantRepository = $productVariantRepository;
-        $this->imageRepository = $imageRepository;
+        // $this->imageRepository = $imageRepository;
     }
 
     /**

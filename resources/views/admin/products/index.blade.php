@@ -4,15 +4,15 @@
 
 @section('content')
 
-    @include('siravel::modals')
+    @include('market::admin.modals')
 
-    @include('siravel::layouts.module-header', [ 'module' => 'products' ])
+    @include('market::layouts.module-header', [ 'module' => 'products' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($products->count() === 0)
-                    @include('siravel::layouts.module-search', [ 'module' => 'products' ])
+                    @include('market::layouts.module-search', [ 'module' => 'products' ])
                 @else
                     <table class="table table-sitecpaymentd">
                         <thead>

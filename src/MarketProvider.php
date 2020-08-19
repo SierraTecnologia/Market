@@ -2,27 +2,27 @@
 
 namespace Market;
 
-use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
-use Market\Services\MarketService;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\View;
-
-use Log;
 use App;
 use Config;
-use Route;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Routing\Router;
 
-use Muleta\Traits\Providers\ConsoleTools;
-
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use Log;
 use Market\Facades\Market as MarketFacade;
-use Illuminate\Contracts\Events\Dispatcher;
+
 use Market\Interfaces\Helpers\StoreHelper;
+
 use Market\Services\CartService;
 use Market\Services\CustomerProfileService;
 use Market\Services\LogisticService;
+use Market\Services\MarketService;
 use Market\Services\ProductService;
+use Muleta\Traits\Providers\ConsoleTools;
+use Route;
 
 
 class MarketProvider extends ServiceProvider

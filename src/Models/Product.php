@@ -2,12 +2,12 @@
 
 namespace Market\Models;
 
-use Stalker\Models\Image;
 use App\Models\ProductImage;
 use Market\Models\MarketModel;
-use Stalker\Services\Midia\FileService;
 use Market\Services\CartService;
 use Market\Services\ProductService;
+use Stalker\Models\Image;
+use Stalker\Services\Midia\FileService;
 
 
 class Product extends MarketModel
@@ -75,7 +75,7 @@ class Product extends MarketModel
 
     public function getHrefAttribute()
     {
-        return route('siravel.commerce.product', [$this->url]);
+        return route('commerce.product', [$this->url]);
     }
 
     public function getFileDownloadHrefAttribute()

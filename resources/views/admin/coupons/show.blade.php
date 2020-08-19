@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('siravel::modals')
+    @include('market::admin.modals')
 
     <div class="col-md-12 raw-margin-top-24">
         <div class="row">

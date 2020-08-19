@@ -2,7 +2,7 @@
 
 namespace Market\Http\Controllers\Admin;
 
-use Facilitador\Services\UserService;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use Market\Http\Controllers\SitecController;
 use Market\Services\AnalyticsService;

@@ -28,7 +28,7 @@
 
             <div class="row raw-margin-bottom-24">
                 <div class="col-md-6">
-                    @include('siravel::orders.breadcrumbs', ['location' => ['edit']])
+                    @include('market::orders.breadcrumbs', ['location' => ['edit']])
                 </div>
                 <div class="col-md-6">
                     <h4 class="text-center raw-margin-top-8">#{{ $order->uuid }} @if ($order->is_shipped) <span class="fa fa-truck"></span> @endif</h4>

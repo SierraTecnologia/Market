@@ -4,13 +4,13 @@
 
 @section('content')
 
-    @include('siravel::layouts.module-header', [ 'module' => 'plans' ])
+    @include('market::layouts.module-header', [ 'module' => 'plans' ])
 
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12">
                 @if ($plans->isEmpty())
-                    @include('siravel::layouts.module-search', [ 'module' => 'plans' ])
+                    @include('market::layouts.module-search', [ 'module' => 'plans' ])
                 @else
                     <table class="table table-sitecpaymentd">
                         <thead>
