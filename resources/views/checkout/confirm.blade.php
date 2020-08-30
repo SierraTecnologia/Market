@@ -10,19 +10,19 @@
             <form method="post" action="{!! route('siravel.calculate.shipping') !!}">
                 {!! csrf_field() !!}
                 <div class="form-group">
-                    <input class="form-control" required name="address[street]" placeholder="Street" value="{!! siravel()->customer()->shippingAddress('street') !!}">
+                    <input class="form-control" required name="address[street]" placeholder="Street" value="{!! market()->customer()->shippingAddress('street') !!}">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" required name="address[postal]" placeholder="Postal" value="{!! siravel()->customer()->shippingAddress('postal') !!}">
+                    <input class="form-control" required name="address[postal]" placeholder="Postal" value="{!! market()->customer()->shippingAddress('postal') !!}">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" required name="address[city]" placeholder="City" value="{!! siravel()->customer()->shippingAddress('city') !!}">
+                    <input class="form-control" required name="address[city]" placeholder="City" value="{!! market()->customer()->shippingAddress('city') !!}">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" required name="address[state]" placeholder="State" value="{!! siravel()->customer()->shippingAddress('state') !!}">
+                    <input class="form-control" required name="address[state]" placeholder="State" value="{!! market()->customer()->shippingAddress('state') !!}">
                 </div>
                 <div class="form-group">
-                    <input class="form-control" required name="address[country]" placeholder="Country" value="{!! siravel()->customer()->shippingAddress('country') !!}">
+                    <input class="form-control" required name="address[country]" placeholder="Country" value="{!! market()->customer()->shippingAddress('country') !!}">
                 </div>
                 <input class="btn btn-outline-secondary pull-right" type="submit" value="Re-calculate Shipping">
             </form>

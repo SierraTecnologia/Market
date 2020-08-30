@@ -47,21 +47,21 @@
                 <tr>
                     <td>Shipping Address</td>
                     <td>
-                        {!! siravel()->customer()->shippingAddress('street') !!}
-                        {!! siravel()->customer()->shippingAddress('postal') !!}
-                        {!! siravel()->customer()->shippingAddress('city') !!}
-                        {!! siravel()->customer()->shippingAddress('state') !!}
-                        {!! siravel()->customer()->shippingAddress('country') !!}
+                        {!! market()->customer()->shippingAddress('street') !!}
+                        {!! market()->customer()->shippingAddress('postal') !!}
+                        {!! market()->customer()->shippingAddress('city') !!}
+                        {!! market()->customer()->shippingAddress('state') !!}
+                        {!! market()->customer()->shippingAddress('country') !!}
                     </td>
                 </tr>
                 <tr>
                     <td>Billing Address</td>
                     <td>
-                        {!! siravel()->customer()->billingAddress('street') !!}
-                        {!! siravel()->customer()->billingAddress('postal') !!}
-                        {!! siravel()->customer()->billingAddress('city') !!}
-                        {!! siravel()->customer()->billingAddress('state') !!}
-                        {!! siravel()->customer()->billingAddress('country') !!}
+                        {!! market()->customer()->billingAddress('street') !!}
+                        {!! market()->customer()->billingAddress('postal') !!}
+                        {!! market()->customer()->billingAddress('city') !!}
+                        {!! market()->customer()->billingAddress('state') !!}
+                        {!! market()->customer()->billingAddress('country') !!}
                     </td>
                 </tr>
             </table>

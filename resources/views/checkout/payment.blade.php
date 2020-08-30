@@ -49,10 +49,10 @@
                 </div>
             </form>
 
-            @if (siravel()->customer()->hasProfile() && ! is_null(siravel()->customer()->lastCard('card_last_four')))
+            @if (market()->customer()->hasProfile() && ! is_null(market()->customer()->lastCard('card_last_four')))
                 <form method="post" action="{{ route('siravel.process.last-card') }}">
                     {!! csrf_field() !!}
-                    <button class="btn btn-outline-primary" id="lastCardBtn" type="submit">Pay with card (ending in {!! siravel()->customer()->lastCard('card_last_four') !!})</button>
+                    <button class="btn btn-outline-primary" id="lastCardBtn" type="submit">Pay with card (ending in {!! market()->customer()->lastCard('card_last_four') !!})</button>
                 </form>
             @endif
         </div>

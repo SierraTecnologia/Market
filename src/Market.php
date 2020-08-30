@@ -2,6 +2,8 @@
 
 namespace Market;
 
+use Config;
+use Crypto;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Filesystem\Filesystem;
@@ -9,13 +11,11 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use View;
-use Config;
+use ReflectionClass;
 use Request;
 use Session;
-use ReflectionClass;
 
-use Crypto;
+use View;
 
 class Market
 {
@@ -28,6 +28,7 @@ class Market
      * @var string
      */
     private $locale;
+    public $backendRoute = 'admin';
 
     public function __construct()
     {
@@ -61,5 +62,18 @@ class Market
                 }
             }
         }
+    }
+    /**
+     * SierraTecnologia CMS url generator - handles custom siravel url
+     *
+     * @param  string $string
+     *
+     * @return string
+     */
+    public function url($string)
+    {
+        $url = str_replace('.', '/', $string);
+
+        return url($this->backendRoute.'/'.$url);
     }
 }

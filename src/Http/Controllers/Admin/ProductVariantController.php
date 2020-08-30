@@ -2,13 +2,13 @@
 
 namespace Market\Http\Controllers\Admin;
 
-use Market;
-use Response;
 use Illuminate\Http\Request;
-use Market\Models\Commerce\Products;
+use Market;
 use Market\Http\Controllers\SitecController;
+use Market\Models\Commerce\Products;
 use Market\Repositories\ProductRepository;
 use Market\Repositories\ProductVariantRepository;
+use Response;
 
 class ProductVariantController extends SitecController
 {
@@ -58,7 +58,7 @@ class ProductVariantController extends SitecController
             Market::notification('Failed to add variant. Missing Key or Value.', 'warning');
         }
 
-        return redirect(route(config('market.admin-route-prefix', 'admin').'.products.edit', $id).'?tab=variants');
+        return redirect(route('admin.products.edit', $id).'?tab=variants');
     }
 
     /**

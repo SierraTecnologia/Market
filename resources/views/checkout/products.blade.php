@@ -23,26 +23,26 @@
 <table class="table table-stripped mt-4">
     <tr>
         <td><b>Shipping</b> <span class="shipping-choice"></span></td>
-        <td class="text-right">${!! siravel()->checkoutShipping() !!}</td>
+        <td class="text-right">${!! market()->checkoutShipping() !!}</td>
     </tr>
     <tr>
         <td><b>Tax</b></td>
-        <td class="text-right">${!! siravel()->checkoutTax() !!}</td>
+        <td class="text-right">${!! market()->checkoutTax() !!}</td>
     </tr>
     <tr>
         <td><b>Subtotal</b></td>
-        <td class="text-right">${!! siravel()->checkoutSubtotal() !!}</td>
+        <td class="text-right">${!! market()->checkoutSubtotal() !!}</td>
     </tr>
 
     @if (Session::has('coupon_code'))
     <tr>
         <td><b>Coupon <a href="{{ url(\Illuminate\Support\Facades\Config::get('siravel.store_url_prefix').'/coupon/remove') }}"><span class="fa fa-close"></span></a></b></td>
-        <td class="text-right">-${!! siravel()->couponValue() !!}</td>
+        <td class="text-right">-${!! market()->couponValue() !!}</td>
     </tr>
     @endif
 
     <tr>
         <td><b>Total</b></td>
-        <td class="text-right">${!! siravel()->checkoutTotal() !!}</td>
+        <td class="text-right">${!! market()->checkoutTotal() !!}</td>
     </tr>
 </table>

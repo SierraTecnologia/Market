@@ -12,11 +12,11 @@
         </thead>
         <tbody>
             @foreach ($subscriptions as $subscription)
-                @if (siravel()->subscriptionPlan($subscription))
+                @if (market()->subscriptionPlan($subscription))
                     <tr>
-                        <td><a href="{{ siravel()->customerSubscriptionUrl($subscription) }}">{!! $subscription->name !!}</a></td>
-                        <td>${{ siravel()->subscriptionPlan($subscription)->amount }}</td>
-                        <td class="text-right">@if (is_null($subscription->ends_at)) {!! siravel()->cancelSubscriptionBtn($subscription, 'btn btn-sm btn-danger') !!} @endif</td>
+                        <td><a href="{{ market()->customerSubscriptionUrl($subscription) }}">{!! $subscription->name !!}</a></td>
+                        <td>${{ market()->subscriptionPlan($subscription)->amount }}</td>
+                        <td class="text-right">@if (is_null($subscription->ends_at)) {!! market()->cancelSubscriptionBtn($subscription, 'btn btn-sm btn-danger') !!} @endif</td>
                     </tr>
                 @endif
             @endforeach

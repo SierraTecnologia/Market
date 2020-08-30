@@ -39,7 +39,11 @@
         ],
         "psr-4": {
             "Market\\": "src/"
-        }
+        },
+        "files": [
+            "helpers/general.php",
+            "helpers/commerce_helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

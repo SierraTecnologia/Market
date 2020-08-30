@@ -1,6 +1,6 @@
 <?php
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateFeaturesCommercesTables extends Migration
 {
@@ -37,8 +37,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->string('seo_description')->nullable();
             $table->string('seo_keywords')->nullable();
             $table->text('details')->nullable();
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'product_variants', function (Blueprint $table) {
@@ -46,8 +45,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->integer('product_id')->default(0);
             $table->string('key');
             $table->string('value');
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'cart', function (Blueprint $table) {
@@ -58,8 +56,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->text('product_variants')->nullable();
             $table->text('address')->nullable();
             $table->float('quantity');
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'transactions', function (Blueprint $table) {
@@ -81,8 +78,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->text('cart');
             $table->text('response');
             $table->text('notes')->nullable();
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'orders', function (Blueprint $table) {
@@ -96,8 +92,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->string('tracking_number')->nullable();
             $table->text('notes')->nullable();
             $table->string('status')->default('pending');
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::table('user_meta', function ($table) {
@@ -121,16 +116,14 @@ class CreateFeaturesCommercesTables extends Migration
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(false);
             $table->boolean('is_featured')->default(false);
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'favorites', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('product_id');
             $table->integer('user_id');
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'coupons', function (Blueprint $table) {
@@ -144,8 +137,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->integer('limit')->default(1);
             $table->string('sitecpayment_id');
             $table->boolean('for_subscriptions')->default(false);
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'order_items', function (Blueprint $table) {
@@ -162,8 +154,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->integer('total');
             $table->integer('shipping');
             $table->string('status')->default('pending');
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
         Schema::create(config('siravel.db-prefix', '').'refunds', function (Blueprint $table) {
@@ -175,8 +166,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->decimal('amount')->default(0);
             $table->string('charge');
             $table->string('currency');
-			$table->string('business_code');
-            // $table->foreign('business_code')->references('code')->on('businesses');
+            
             $table->timestamps();
         });
 	}

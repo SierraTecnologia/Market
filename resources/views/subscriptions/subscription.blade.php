@@ -19,21 +19,21 @@
         </tr>
         <tr>
             <td>Details</td>
-            <td class="text-right">{{ siravel()->subscriptionPlan($subscription)->description }}</td>
+            <td class="text-right">{{ market()->subscriptionPlan($subscription)->description }}</td>
         </tr>
         @if (is_null($subscription->ends_at))
             <tr>
                 <td>Upcoming</td>
                 <td class="text-right">
-                    {{ siravel()->subscriptionUpcoming($subscription)['total'] }}<br>
-                    {{ siravel()->subscriptionUpcoming($subscription)['date'] }}
+                    {{ market()->subscriptionUpcoming($subscription)['total'] }}<br>
+                    {{ market()->subscriptionUpcoming($subscription)['date'] }}
                 </td>
             </tr>
         @endif
     </table>
 
     @if (is_null($subscription->ends_at))
-        {!! siravel()->cancelSubscriptionBtn($subscription, 'btn btn-danger fload-right') !!}
+        {!! market()->cancelSubscriptionBtn($subscription, 'btn btn-danger fload-right') !!}
     @endif
 
 @endsection
