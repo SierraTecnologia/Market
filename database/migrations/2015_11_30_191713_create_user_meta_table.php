@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateUserMetaTable extends Migration
 {
@@ -20,14 +20,11 @@ class CreateUserMetaTable extends Migration
 
             $table->string('phone')->nullable();
 
-            $table->boolean('is_active')->default(0);
+            $table->boolean('is_active')->default(false);
             $table->string('activation_token')->nullable();
 
             $table->boolean('marketing')->default(0);
             $table->boolean('terms_and_cond')->default(1);
-            
-			$table->string('business_code');
-            $table->foreign('business_code')->references('code')->on('businesses');
 
             $table->timestamps();
         });

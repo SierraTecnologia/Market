@@ -5,34 +5,34 @@ use Illuminate\Database\Schema\Blueprint;
 class CreateFeaturesCommercesTables extends Migration
 {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         Schema::create(config('siravel.db-prefix', '').'products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('url');
             $table->string('code')->nullable();
-            $table->integer('price');
+            $table->decimal('price');
             $table->string('weight')->nullable();
             $table->string('width')->nullable();
             $table->string('height')->nullable();
             $table->string('depth')->nullable();
-            $table->integer('discount')->default(0);
+            $table->decimal('discount')->default(0);
             $table->string('hero_image')->nullable();
             $table->string('notification')->nullable();
             $table->string('discount_type')->nullable();
             $table->date('discount_start_date')->nullable();
             $table->date('discount_end_date')->nullable();
             $table->integer('stock')->default(0);
-            $table->integer('is_available')->default(0);
-            $table->integer('is_published')->default(0);
-            $table->integer('is_download')->default(0);
-            $table->integer('is_featured')->default(0);
+            $table->boolean('is_available')->default(false);
+            $table->boolean('is_published')->default(false);
+            $table->boolean('is_download')->default(false);
+            $table->boolean('is_featured')->default(false);
             $table->string('file')->nullable();
             $table->string('seo_description')->nullable();
             $table->string('seo_keywords')->nullable();
@@ -55,7 +55,7 @@ class CreateFeaturesCommercesTables extends Migration
             $table->string('entity_type');
             $table->text('product_variants')->nullable();
             $table->text('address')->nullable();
-            $table->float('quantity');
+            $table->integer('quantity');
             
             $table->timestamps();
         });
@@ -146,12 +146,12 @@ class CreateFeaturesCommercesTables extends Migration
             $table->integer('product_id');
             $table->integer('transaction_id');
             $table->integer('refund_id')->nullable();
-            $table->float('quantity');
+            $table->integer('quantity');
             $table->json('variants')->nullable();
-            $table->integer('subtotal');
+            $table->decimal('subtotal');
             $table->boolean('was_refunded')->default(false);
-            $table->integer('tax');
-            $table->integer('total');
+            $table->decimal('tax');
+            $table->decimal('total');
             $table->integer('shipping');
             $table->string('status')->default('pending');
             
@@ -169,15 +169,15 @@ class CreateFeaturesCommercesTables extends Migration
             
             $table->timestamps();
         });
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
         Schema::drop(config('siravel.db-prefix', '').'refunds');
         Schema::drop(config('siravel.db-prefix', '').'order_items');
         Schema::drop(config('siravel.db-prefix', '').'coupons');
@@ -195,6 +195,5 @@ class CreateFeaturesCommercesTables extends Migration
         Schema::drop(config('siravel.db-prefix', '').'cart');
         Schema::drop(config('siravel.db-prefix', '').'product_variants');
         Schema::drop(config('siravel.db-prefix', '').'products');
-	}
-
+    }
 }
