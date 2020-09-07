@@ -15,9 +15,9 @@ class CreateFeaturesCommercesTables extends Migration
         Schema::create(config('siravel.db-prefix', '').'products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('code')->nullable();
-            $table->decimal('price');
+            $table->decimal('price')->nullable();
             $table->string('weight')->nullable();
             $table->string('width')->nullable();
             $table->string('height')->nullable();
@@ -37,6 +37,9 @@ class CreateFeaturesCommercesTables extends Migration
             $table->string('seo_description')->nullable();
             $table->string('seo_keywords')->nullable();
             $table->text('details')->nullable();
+
+            // Criei pro jaedelivery
+            $table->integer('category_id')->nullable();
             
             $table->timestamps();
         });

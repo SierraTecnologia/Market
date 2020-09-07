@@ -20,7 +20,8 @@ class CreateProductablesTable extends Migration
                 // $table->foreign('product_id')->references('id')->on('products');
                 $table->unsignedInteger('productable_id');
                 $table->string('productable_type');
-                $table->float('price');
+                $table->float('price')->nullable();
+                $table->float('real_price')->nullable();
                 $table->timestamps();
             }
         );
