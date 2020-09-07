@@ -9,10 +9,8 @@ use Market\Services\ProductService;
 use Stalker\Models\Image;
 use Stalker\Services\Midia\FileService;
 
-
 class Product extends MarketModel
 {
-    
     public $table = 'products';
 
     public $primaryKey = 'id';
@@ -75,7 +73,11 @@ class Product extends MarketModel
 
     public function getHrefAttribute()
     {
-        return route('commerce.product', [$this->url]);
+        // @todo
+        if (Route::has('commerce.product')) {
+            return route('commerce.product', [$this->url]);
+        }
+        return $this->url;
     }
 
     public function getFileDownloadHrefAttribute()
@@ -106,7 +108,7 @@ class Product extends MarketModel
     public function isFavorite()
     {
         if (auth()->user()) {
-           return (auth()->user()->favorites()->pluck('product_id')->contains($this->id));
+            return (auth()->user()->favorites()->pluck('product_id')->contains($this->id));
         }
 
         return false;
