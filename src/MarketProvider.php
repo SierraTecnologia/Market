@@ -24,7 +24,6 @@ use Market\Services\ProductService;
 use Muleta\Traits\Providers\ConsoleTools;
 use Route;
 
-
 class MarketProvider extends ServiceProvider
 {
     use ConsoleTools;
@@ -53,7 +52,7 @@ class MarketProvider extends ServiceProvider
             'icon'        => 'laptop',
             'icon_color'  => 'red',
             'label_color' => 'success',
-            'space'     => 'painel',
+            'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
         ],
@@ -63,7 +62,7 @@ class MarketProvider extends ServiceProvider
             'icon'        => 'laptop',
             'icon_color'  => 'red',
             'label_color' => 'success',
-            'space'     => 'painel',
+            'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
         ],
@@ -73,7 +72,7 @@ class MarketProvider extends ServiceProvider
             'icon'        => 'laptop',
             'icon_color'  => 'red',
             'label_color' => 'success',
-            'space'     => 'painel',
+            'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
         ],
@@ -83,7 +82,7 @@ class MarketProvider extends ServiceProvider
             'icon'        => 'laptop',
             'icon_color'  => 'red',
             'label_color' => 'success',
-            'space'     => 'painel',
+            'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
         ],
@@ -93,7 +92,7 @@ class MarketProvider extends ServiceProvider
             'icon'        => 'laptop',
             'icon_color'  => 'red',
             'label_color' => 'success',
-            'space'     => 'painel',
+            'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
         ],
@@ -103,7 +102,7 @@ class MarketProvider extends ServiceProvider
             'icon'        => 'laptop',
             'icon_color'  => 'red',
             'label_color' => 'success',
-            'space'     => 'painel',
+            'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
         ],
@@ -281,7 +280,6 @@ class MarketProvider extends ServiceProvider
 
         $this->loadViews();
         $this->loadTranslations();
-
     }
 
     private function loadViews()
@@ -294,7 +292,6 @@ class MarketProvider extends ServiceProvider
             $viewsPath => base_path('resources/views/vendor/market'),
             ], ['views',  'sitec', 'sitec-views']
         );
-
     }
     
     private function loadTranslations()
@@ -312,7 +309,7 @@ class MarketProvider extends ServiceProvider
 
 
     /**
-     * 
+     *
      */
     private function loadLogger()
     {
@@ -324,5 +321,4 @@ class MarketProvider extends ServiceProvider
             ]
         );
     }
-
 }
