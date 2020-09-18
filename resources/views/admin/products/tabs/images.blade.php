@@ -20,7 +20,7 @@
     @foreach($images as $image)
         <div class="col-md-3 image-panel raw-margin-top-24">
             <div class="thumbnail">
-                <a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.images.edit', [$image->id]) !!}">
+                <a href="{!! route('admin.market.images.edit', [$image->id]) !!}">
                     <div class="img" style="background-image: url('{!! $image->url !!}')"></div>
                 </a>
             </div>
@@ -39,7 +39,7 @@
                             {!! method_field('DELETE') !!}
                             <button class="delete-btn btn btn-sm img-alter-btn btn-danger float-right" type="submit"><i class="fa fa-trash"></i></button>
                         </form>
-                        <a class="btn btn-sm btn-secondary float-right img-alter-btn raw-margin-right-8" href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.images.edit', [$image->id]) !!}"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-sm btn-secondary float-right img-alter-btn raw-margin-right-8" href="{!! route('admin.market.images.edit', [$image->id]) !!}"><i class="fa fa-edit"></i></a>
                     </div>
                 </div>
             </div>

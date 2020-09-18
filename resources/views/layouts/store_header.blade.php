@@ -6,7 +6,7 @@
                 <span class="fa fa-shopping-cart"></span>
                 <span class="cart-count"></span> Items
             </a>
-            <a class="nav-link" href="{{ route('siravel.products') }}">Products</a>
+            <a class="nav-link" href="{{ route('admin.market.products') }}">Products</a>
             <div class="dropdown">
                 <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></button>
                 <div class="dropdown-menu">

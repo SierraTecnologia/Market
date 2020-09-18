@@ -38,7 +38,7 @@
                     <tbody>
                         <tr>
                             <th>Product</th>
-                            <td class="text-right"><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.products.edit', [$orderItem->product_id]) !!}">{{ ucfirst($orderItem->product->name) }}</a></td>
+                            <td class="text-right"><a href="{!! route('admin.market.products.edit', [$orderItem->product_id]) !!}">{{ ucfirst($orderItem->product->name) }}</a></td>
                         </tr>
                         <tr>
                             <th>Quantity</th>

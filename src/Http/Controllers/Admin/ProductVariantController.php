@@ -49,7 +49,7 @@ class ProductVariantController extends SitecController
         if (empty($product)) {
             Market::notification('Product not found', 'warning');
 
-            return redirect(route('siravel.products.index'));
+            return redirect(route('admin.market.products.index'));
         }
 
         if ($this->productVariantRepository->addVariant($product, $request->all())) {

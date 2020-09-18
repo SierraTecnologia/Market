@@ -76,4 +76,29 @@ class Market
 
         return url($this->backendRoute.'/'.$url);
     }
+
+
+    /**
+     * Module Assets.
+     *
+     * @param string $module      Module name
+     * @param string $path        Asset path
+     * @param string $contentType Content type
+     *
+     * @return string
+     */
+    public function moduleAsset($module, $path, $contentType = 'null')
+    {
+        // $assetPath = base_path(Config::get('siravel.module-directory').'/'.ucfirst($module).'/Assets/'.$path);
+        $assetPath = __DIR__.'/../publishes/assets/'.$path;
+
+        if (!is_file($assetPath)) {
+            $assetPath = '/assets/'.$module.'/'.$path;
+        }
+
+        // @todo
+        return $assetPath;
+
+        return url('admin/asset/'.Crypto::url_encode($assetPath).'/'.Crypto::url_encode($contentType).'/?isModule=true');
+    }
 }

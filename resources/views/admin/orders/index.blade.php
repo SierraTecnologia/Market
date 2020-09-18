@@ -26,8 +26,8 @@
 
                         @foreach($orders as $order)
                             <tr>
-                                <td><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.orders.edit', [$order->id]) !!}">Order #{!! $order->id !!}</a></td>
-                                <td class="m-hidden"><a href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.transactions.edit', [$order->transaction->id]) !!}">Transaction #{!! $order->transaction->id !!}</a></td>
+                                <td><a href="{!! route('admin.market.orders.edit', [$order->id]) !!}">Order #{!! $order->id !!}</a></td>
+                                <td class="m-hidden"><a href="{!! route('admin.market.transactions.edit', [$order->transaction->id]) !!}">Transaction #{!! $order->transaction->id !!}</a></td>
                                 <td class="m-hidden">{!! auth()->user()->find($order->user_id)->name !!}</td>
                                 <td class="m-hidden">{!! ucfirst($order->status) !!}</td>
                                 <td class="m-hidden text-center">
@@ -39,7 +39,7 @@
                                 </td>
                                 <td class="m-hidden">{!! $order->tracking_number !!}</td>
                                 <td class="text-right">
-                                    <a class="btn btn-sm btn-outline-primary float-right" href="{!! route(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.orders.edit', [$order->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
+                                    <a class="btn btn-sm btn-outline-primary float-right" href="{!! route('admin.market.orders.edit', [$order->id]) !!}"><i class="fa fa-edit"></i> Edit</a>
                                 </td>
                             </tr>
                         @endforeach
