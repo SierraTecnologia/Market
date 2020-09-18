@@ -34,7 +34,7 @@
                         @endif
                     </div>
                     <div class="col-lg-6 col-md-12 col-sm-12">
-                        <form method="post" action="{!! url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/products/images/'.$image->id) !!}">
+                        <form method="post" action="{!! url('admin'.'/products/images/'.$image->id) !!}">
                             {!! csrf_field() !!}
                             {!! method_field('DELETE') !!}
                             <button class="delete-btn btn btn-sm img-alter-btn btn-danger float-right" type="submit"><i class="fa fa-trash"></i></button>
@@ -53,12 +53,12 @@
         {!! Form::open(['url' => 'siravel/images/upload', 'files' => true, 'class' => 'dropzone', 'id' => 'fileDropzone']); !!}
         {!! Form::close() !!}
 
-        {!! Form::open(['url' => \Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/products/images', 'files' => true, 'id' => 'fileDetailsForm', 'class' => 'add']) !!}
+        {!! Form::open(['url' => 'admin'.'/products/images', 'files' => true, 'id' => 'fileDetailsForm', 'class' => 'add']) !!}
 
             <input type="hidden" name="product_id" value="{{ $product->id }}">
 
             <div class="form-group text-right">
-                <a href="{!! url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/images') !!}" class="btn btn-secondary raw-left">Cancel</a>
+                <a href="{!! url('admin'.'/images') !!}" class="btn btn-secondary raw-left">Cancel</a>
                 {!! Form::submit('Save', ['class' => 'btn btn-primary', 'id' => 'saveImagesBtn']) !!}
             </div>
 

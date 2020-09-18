@@ -7,7 +7,7 @@
     <div class="col-md-12 raw-margin-top-24">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                {!! Form::open(['route' => \Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.coupons.store']) !!}
+                {!! Form::open(['route' => 'admin'.'.coupons.store']) !!}
 
                 {!! FormMaker::fromTable("coupons", \Illuminate\Support\Facades\Config::get('siravel.forms.coupons')) !!}
 

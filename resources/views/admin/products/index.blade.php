@@ -53,7 +53,7 @@
                                 <td class="text-right">
                                     <div class="btn-toolbar justify-content-between">
                                         <a class="btn btn-sm btn-outline-primary mr-2" href="{!! route('admin.market.products.edit', [$product->id]) !!}"><i class="fa fa-pencil"></i> Edit</a>
-                                        <form method="post" action="{!! url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/products/'.$product->id) !!}">
+                                        <form method="post" action="{!! url('admin'.'/products/'.$product->id) !!}">
                                             {!! csrf_field() !!}
                                             {!! method_field('DELETE') !!}
                                             <button class="delete-btn btn btn-sm btn-danger" type="submit"><i class="fa fa-trash"></i> Delete</button>

@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                {!! Form::model($plan, ['route' => [\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'.plans.update', $plan->id], 'method' => 'patch']) !!}
+                {!! Form::model($plan, ['route' => ['admin'.'.plans.update', $plan->id], 'method' => 'patch']) !!}
 
                 {!! FormMaker::setColumns(2)->fromObject($plan, \Illuminate\Support\Facades\Config::get('siravel.forms.plans-edit')) !!}
 
@@ -37,12 +37,12 @@
                 {!! Form::close() !!}
 
                 @if ($plan->enabled)
-                    <a href="{{ url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/plans/'.$plan->id.'/state-change/disable') }}" class="btn btn-warning pull-right raw-margin-right-16">Disable</a>
+                    <a href="{{ url('admin'.'/plans/'.$plan->id.'/state-change/disable') }}" class="btn btn-warning pull-right raw-margin-right-16">Disable</a>
                 @else
-                    <a href="{{ url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/plans/'.$plan->id.'/state-change/enable') }}" class="btn btn-outline-success pull-right raw-margin-right-16">Enable</a>
+                    <a href="{{ url('admin'.'/plans/'.$plan->id.'/state-change/enable') }}" class="btn btn-outline-success pull-right raw-margin-right-16">Enable</a>
                 @endif
 
-                <form id="deletePlanForm" method="post" action="{!! url(\Illuminate\Support\Facades\Config::get('siravel.backend-route-prefix', 'siravel').'/plans/'.$plan->id) !!}">
+                <form id="deletePlanForm" method="post" action="{!! url('admin'.'/plans/'.$plan->id) !!}">
                     {!! csrf_field() !!}
                     {!! method_field('DELETE') !!}
                     <button class="btn delete-plan-btn btn-danger pull-left" type="submit"><i class="fa fa-trash"></i> Delete</button>
