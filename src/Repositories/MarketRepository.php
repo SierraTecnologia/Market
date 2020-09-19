@@ -39,10 +39,10 @@ class MarketRepository
     public function allGroupedByCategory()
     {
         $users = DB::table('users')
-                    ->orderBy('name', 'desc')
-                    ->groupBy('count')
-                    ->having('count', '>', 100)
-                    ->get();
+            ->orderBy('name', 'desc')
+            ->groupBy('count')
+            ->having('count', '>', 100)
+            ->get();
     }
 
     /**

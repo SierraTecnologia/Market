@@ -117,7 +117,8 @@ class OrderService
                 $refund = $this->transactions->refund($order->transaction('uuid'), $order->remainingValue());
 
                 if ($refund) {
-                    $refundRecord = app(Refund::class)->create([
+                    $refundRecord = app(Refund::class)->create(
+                        [
                         'transaction_id' => $order->transaction('id'),
                         'provider_id' => $refund->id,
                         'uuid' => Crypto::uuid(),
@@ -125,20 +126,25 @@ class OrderService
                         'provider' => 'SierraTecnologia',
                         'charge' => $refund->charge,
                         'currency' => $refund->currency,
-                    ]);
+                        ]
+                    );
 
                     foreach ($order->items as $item) {
-                        $item->update([
+                        $item->update(
+                            [
                             'was_refunded' => true,
                             'status' => 'cancelled',
                             'refund_id' => $refundRecord->id,
-                        ]);
+                            ]
+                        );
                     }
 
-                    return $this->update($order->id, [
+                    return $this->update(
+                        $order->id, [
                         'status' => 'cancelled',
                         'is_shipped' => false,
-                    ]);
+                        ]
+                    );
                 }
             }
         }

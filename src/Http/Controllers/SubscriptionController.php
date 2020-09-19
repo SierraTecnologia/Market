@@ -23,7 +23,7 @@ class SubscriptionController extends Controller
     /**
      * Subscribe to a plan
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return Illuminate\Http\Response
      */
@@ -56,7 +56,7 @@ class SubscriptionController extends Controller
     /**
      * Get a subscription by name
      *
-     * @param  string $name
+     * @param string $name
      *
      * @return Illuminate\Http\Response
      */
@@ -70,8 +70,8 @@ class SubscriptionController extends Controller
     /**
      * Cancel a subscription
      *
-     * @param  Request $request
-     * @param  string $name
+     * @param Request $request
+     * @param string  $name
      *
      * @return Illuminate\Http\Response
      */

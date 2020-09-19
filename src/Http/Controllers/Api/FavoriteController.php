@@ -54,7 +54,7 @@ class FavoriteController extends Controller
     /**
      * Remove a product from customer favories
      *
-     * @param  Request $request
+     * @param Request $request
      *
      * @return Illuminate\Http\Response
      */

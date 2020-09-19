@@ -44,7 +44,8 @@ class SierraTecnologiaService
      */
     public function createPlan($plan)
     {
-        return $this->plan->create([
+        return $this->plan->create(
+            [
             'amount' => $plan['amount'],
             'interval' => $plan['interval'],
             'name' => $plan['name'],
@@ -52,7 +53,8 @@ class SierraTecnologiaService
             'statement_descriptor' => $plan['descriptor'],
             'trial_period_days' => $plan['trial_days'],
             'id' => $plan['sitecpayment_id'],
-        ]);
+            ]
+        );
     }
 
     /**
@@ -127,25 +129,27 @@ class SierraTecnologiaService
         return $coupon->delete();
     }
 
-   /*
+    /*
     * --------------------------------------------------------------------------
     * Transactions
     * --------------------------------------------------------------------------
-   */
+    */
 
     /**
      * Refund a purchase.
      *
-     * @param string $transactionId
+     * @param string   $transactionId
      * @param int|null $amount
      *
      * @return obj
      */
     public function refund($transactionId, $amount)
     {
-        return $this->refund->create([
+        return $this->refund->create(
+            [
             'charge' => $transactionId,
             'amount' => $amount,
-        ]);
+            ]
+        );
     }
 }

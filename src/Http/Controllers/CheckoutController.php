@@ -138,9 +138,13 @@ class CheckoutController extends Controller
      */
     public function reCalculateShipping(Request $request)
     {
-        $this->customer->updateProfileAddress(array_merge($request->address, [
-            'shipping' => true
-        ]));
+        $this->customer->updateProfileAddress(
+            array_merge(
+                $request->address, [
+                'shipping' => true
+                ]
+            )
+        );
 
         return back()->with('message', 'Successfully updated');
     }

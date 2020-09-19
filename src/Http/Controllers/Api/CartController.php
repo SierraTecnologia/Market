@@ -26,7 +26,8 @@ class CartController extends Controller
      */
     public function cart()
     {
-        return $this->responseService->apiResponse('success', [
+        return $this->responseService->apiResponse(
+            'success', [
             'count' => $this->cart->itemCount(),
             'contents' => $this->cart->contents(),
             'shipping' => StoreHelper::moneyFormat($this->cart->getCartShipping()),
@@ -34,7 +35,8 @@ class CartController extends Controller
             'tax' => StoreHelper::moneyFormat($this->cart->getCartTax()),
             'subtotal' => StoreHelper::moneyFormat($this->cart->getCartSubTotal()),
             'total' => StoreHelper::moneyFormat($this->cart->getCartTotal()),
-        ]);
+            ]
+        );
     }
 
     /**

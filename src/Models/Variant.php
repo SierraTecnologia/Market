@@ -30,8 +30,8 @@ class Variant extends MarketModel
 
     public function rawValue($value)
     {
-        $valueWithoutParenthesis = preg_replace("/\([^)]+\)/","", $value);
-        $valueWithoutSquareParenthesis = preg_replace("/\[[^)]+\]/","", $valueWithoutParenthesis);
+        $valueWithoutParenthesis = preg_replace("/\([^)]+\)/", "", $value);
+        $valueWithoutSquareParenthesis = preg_replace("/\[[^)]+\]/", "", $valueWithoutParenthesis);
 
         return ucfirst($valueWithoutSquareParenthesis);
     }

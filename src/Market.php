@@ -66,7 +66,7 @@ class Market
     /**
      * SierraTecnologia CMS url generator - handles custom siravel url
      *
-     * @param  string $string
+     * @param string $string
      *
      * @return string
      */

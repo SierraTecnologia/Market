@@ -31,7 +31,7 @@ class OrderItemController extends Controller
     /**
      * Cancel an order item
      *
-     * @param  Request $request
+     * @param Request $request
      *
      * @return Response
      */

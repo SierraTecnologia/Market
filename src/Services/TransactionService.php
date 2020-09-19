@@ -127,9 +127,11 @@ class TransactionService
         $refund = app(SierraTecnologiaService::class)->refund($transaction->provider_id, $amount);
 
         if ($refund) {
-            $transaction->update([
+            $transaction->update(
+                [
                 'refund_date' => Carbon::now(),
-            ]);
+                ]
+            );
 
             app(LogisticService::class)->afterRefund($transaction);
 

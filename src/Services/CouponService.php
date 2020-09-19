@@ -64,7 +64,8 @@ class CouponService
                     $discount_type = 'dollar';
                 }
 
-                $this->model->create([
+                $this->model->create(
+                    [
                     'sitecpayment_id' => $coupon->id,
                     'start_date' => Carbon::createFromTimestamp($coupon->created),
                     'end_date' => $endDate,
@@ -74,7 +75,8 @@ class CouponService
                     'limit' => $coupon->max_redemptions ?? 1,
                     'currency' => config('commerce.currency'),
                     'for_subscriptions' => true,
-                ]);
+                    ]
+                );
             }
         }
     }

@@ -10,9 +10,11 @@ class AnalyticsService
 {
     public function balanceValues($transactions)
     {
-        $collected = $transactions->groupBy(function ($item) {
-            return $item->created_at->format('d-M-y');
-        });
+        $collected = $transactions->groupBy(
+            function ($item) {
+                return $item->created_at->format('d-M-y');
+            }
+        );
 
         $balanceValues = [
             'refunds' => 0,
@@ -34,9 +36,11 @@ class AnalyticsService
 
     public function getTransactionsByDays($transactions)
     {
-        $collected = $transactions->groupBy(function ($item) {
-            return $item->created_at->format('d-M-y');
-        });
+        $collected = $transactions->groupBy(
+            function ($item) {
+                return $item->created_at->format('d-M-y');
+            }
+        );
 
         $transactionDays = collect();
         $transactionsByDay = collect();

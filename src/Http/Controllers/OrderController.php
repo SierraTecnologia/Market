@@ -28,7 +28,7 @@ class OrderController extends Controller
     /**
      * Get a customer order
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return Illuminate\Http\Response
      */
@@ -42,7 +42,7 @@ class OrderController extends Controller
     /**
      * Cancel a customer order
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return Illuminate\Http\Response
      */

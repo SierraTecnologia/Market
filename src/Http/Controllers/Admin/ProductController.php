@@ -137,12 +137,14 @@ class ProductController extends SitecController
     public function setImages(Request $request)
     {
         foreach ($request->location as $location) {
-            $result = $this->imageRepository->store([
+            $result = $this->imageRepository->store(
+                [
                 'entity_id' => $request->product_id,
                 'location' => $location,
                 'is_published' => true,
                 'entity_type' => 'product',
-            ]);
+                ]
+            );
         }
 
         if ($result) {
@@ -155,7 +157,7 @@ class ProductController extends SitecController
     /**
      * Delete the image
      *
-     * @param  integer $id
+     * @param integer $id
      *
      * @return Illuminate\Http\Response
      */

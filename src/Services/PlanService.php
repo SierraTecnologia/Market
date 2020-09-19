@@ -52,7 +52,8 @@ class PlanService
             $localPlan = $this->model->getPlansBySierraTecnologiaId($plan->id);
 
             if (!$localPlan) {
-                $this->model->create([
+                $this->model->create(
+                    [
                     'uuid' => crypto_uuid(),
                     'name' => $plan->id,
                     'price' => $plan->amount,
@@ -62,7 +63,8 @@ class PlanService
                     'subscription_name' => $plan->id,
                     'descriptor' => $plan->statement_descriptor,
                     'description' => $plan->statement_descriptor,
-                ]);
+                    ]
+                );
             }
         }
     }

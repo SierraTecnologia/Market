@@ -26,7 +26,7 @@ class ProductVariantRepository
      * Adds variants to the product.
      *
      * @param Market\Models\Product $products
-     * @param array                       $payload
+     * @param array                 $payload
      *
      * @return Market\Models\Variant
      */

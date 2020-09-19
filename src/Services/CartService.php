@@ -206,10 +206,14 @@ class CartService
             $productVariants = Variant::where('product_id', $id)->get();
 
             foreach ($productVariants as $variant) {
-                array_push($variants, json_encode([
-                    'variant' => $this->getId($variant),
-                    'value' => $this->getDefaultValue($variant),
-                ]));
+                array_push(
+                    $variants, json_encode(
+                        [
+                        'variant' => $this->getId($variant),
+                        'value' => $this->getDefaultValue($variant),
+                        ]
+                    )
+                );
             }
         }
 
@@ -336,7 +340,7 @@ class CartService
     /**
      * Get an item shipping
      *
-     * @param  Product $item
+     * @param Product $item
      *
      * @return int
      */
@@ -348,7 +352,7 @@ class CartService
     /**
      * Get an item tax
      *
-     * @param  Product $item
+     * @param Product $item
      *
      * @return int
      */
@@ -363,7 +367,7 @@ class CartService
     /**
      * Get an item subtotal
      *
-     * @param  Product $item
+     * @param Product $item
      *
      * @return int
      */

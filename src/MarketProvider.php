@@ -149,9 +149,11 @@ class MarketProvider extends ServiceProvider
         $this->registerDirectories();
 
         // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
-        $this->app->booted(function () {
-            $this->routes();
-        });
+        $this->app->booted(
+            function () {
+                $this->routes();
+            }
+        );
 
         $this->loadLogger();
 
@@ -231,21 +233,29 @@ class MarketProvider extends ServiceProvider
         //     }
         // }
 
-        $this->app->bind('ProductService', function ($app) {
-            return app()->make(ProductService::class);
-        });
+        $this->app->bind(
+            'ProductService', function ($app) {
+                return app()->make(ProductService::class);
+            }
+        );
 
-        $this->app->bind('CartService', function ($app) {
-            return app()->make(CartService::class);
-        });
+        $this->app->bind(
+            'CartService', function ($app) {
+                return app()->make(CartService::class);
+            }
+        );
 
-        $this->app->bind('LogisticService', function ($app) {
-            return app()->make(LogisticService::class);
-        });
+        $this->app->bind(
+            'LogisticService', function ($app) {
+                return app()->make(LogisticService::class);
+            }
+        );
 
-        $this->app->bind('CustomerProfileService', function ($app) {
-            return app()->make(CustomerProfileService::class);
-        });
+        $this->app->bind(
+            'CustomerProfileService', function ($app) {
+                return app()->make(CustomerProfileService::class);
+            }
+        );
     }
 
     /**

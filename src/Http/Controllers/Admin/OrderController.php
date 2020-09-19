@@ -93,7 +93,7 @@ class OrderController extends SitecController
     /**
      * Cancel an order item
      *
-     * @param  Request $request
+     * @param Request $request
      *
      * @return Response
      */

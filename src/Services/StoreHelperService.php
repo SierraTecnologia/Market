@@ -42,13 +42,15 @@ class StoreHelperService
 
         if (!Cache::has($key)) {
             $invoice = auth()->user()->meta->upcomingInvoice($subscription->name);
-            Cache::put($key, [
+            Cache::put(
+                $key, [
                 'total' => round(($invoice->total / 100), 2),
                 'attempt_count' => $invoice->attempt_count,
                 'period_start' => $invoice->period_start,
                 'period_end' => $invoice->period_end,
                 'date' => Carbon::createFromTimestamp($invoice->date),
-            ], 25);
+                ], 25
+            );
         }
 
         return Cache::get($key);
