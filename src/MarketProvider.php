@@ -75,6 +75,7 @@ class MarketProvider extends ServiceProvider
             'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
+            'config' => 'market.have-plans',
         ],
         [
             'text'        => 'Coupons',
@@ -85,6 +86,7 @@ class MarketProvider extends ServiceProvider
             'section'     => 'painel',
             'level'       => 2,
             'feature' => 'commerce',
+            'config' => 'market.have-coupons',
         ],
         [
             'text'        => 'Transactions',

@@ -30,18 +30,22 @@ Route::get('commerce-analytics', 'AnalyticsController@dashboard');
 | Plan Routes
 |--------------------------------------------------------------------------
 */
-Route::resource('plans', 'PlanController', ['except' => ['show']]);
-Route::post('plans/search', 'PlanController@search');
-Route::get('plans/{id}/state-change/{state}', 'PlanController@stateChange');
-Route::delete('plans/{id}/cancel-subscription/{user}', 'PlanController@cancelSubscription');
+if (config('market.have-plans', false)) {
+    Route::resource('plans', 'PlanController', ['except' => ['show']]);
+    Route::post('plans/search', 'PlanController@search');
+    Route::get('plans/{id}/state-change/{state}', 'PlanController@stateChange');
+    Route::delete('plans/{id}/cancel-subscription/{user}', 'PlanController@cancelSubscription');
+}
 
 /*
 |--------------------------------------------------------------------------
 | Coupon Routes
 |--------------------------------------------------------------------------
 */
-Route::resource('coupons', 'CouponController', ['except' => ['edit', 'update']]);
-Route::post('coupons/search', 'CouponController@search');
+if (config('market.have-plans', false)) {
+    Route::resource('coupons', 'CouponController', ['except' => ['edit', 'update']]);
+    Route::post('coupons/search', 'CouponController@search');
+}
 
 /*
 |--------------------------------------------------------------------------
