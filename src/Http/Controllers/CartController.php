@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Market\Interfaces\Helpers\StoreHelper;
 use Market\Http\Controllers\Controller;
 use Market\Services\CartService;
-use Support\Services\RiCaResponseService;
+use Muleta\Services\RiCaResponseService;
 
 class CartController extends Controller
 {

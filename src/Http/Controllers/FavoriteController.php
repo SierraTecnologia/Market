@@ -5,7 +5,7 @@ namespace Market\Http\Controllers;
 use Illuminate\Http\Request;
 use Market\Http\Controllers\Controller;
 use Market\Services\FavoriteService;
-use Support\Services\RiCaResponseService;
+use Muleta\Services\RiCaResponseService;
 
 class FavoriteController extends Controller
 {
