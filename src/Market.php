@@ -79,6 +79,30 @@ class Market
 
 
     /**
+     * Creates a breadcrumb trail.
+     *
+     * @param array $locations Locations array
+     *
+     * @return string
+     */
+    public function breadcrumbs($locations)
+    {
+        $trail = '';
+
+        foreach ($locations as $location) {
+            if (is_array($location)) {
+                foreach ($location as $key => $value) {
+                    $trail .= '<li class="breadcrumb-item"><a href="'.$value.'">'.ucfirst($key).'</a></li>';
+                }
+            } else {
+                $trail .= '<li class="breadcrumb-item">'.ucfirst($location).'</li>';
+            }
+        }
+
+        return $trail;
+    }
+
+    /**
      * Module Assets.
      *
      * @param string $module      Module name
