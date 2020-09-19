@@ -1,4 +1,4 @@
-@extends('siravel::layouts.dashboard')
+@extends( (isset($bladeLayout) && !empty($bladeLayout)) ?: \Illuminate\Support\Facades\Config::get('pedreiro.blade_layout', 'layouts.app'))
 
 @section('pageTitle') Analytics: Last {{ request()->months }} @if (request()->months > 1) Months @else Month @endif @stop
 
@@ -66,5 +66,5 @@
             _balanceValues : {!! json_encode($balanceValues) !!}
         };
     </script>
-    <script type="text/javascript" src="{{ Market::moduleAsset('siravel', 'js/analytics.js', 'application/javascript') }}"></script>
+    <script type="text/javascript" src="{{ Market::moduleAsset('js/analytics.js', 'application/javascript') }}"></script>
 @endsection

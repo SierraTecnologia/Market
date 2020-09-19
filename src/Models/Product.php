@@ -6,7 +6,7 @@ use App\Models\ProductImage;
 use Market\Models\MarketModel;
 use Market\Services\CartService;
 use Market\Services\ProductService;
-use Stalker\Models\Image;
+use MediaManager\Models\Image;
 use Stalker\Services\Midia\FileService;
 
 class Product extends MarketModel

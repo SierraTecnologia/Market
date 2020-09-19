@@ -1,4 +1,4 @@
-@extends('siravel::layouts.dashboard')
+@extends( (isset($bladeLayout) && !empty($bladeLayout)) ?: \Illuminate\Support\Facades\Config::get('pedreiro.blade_layout', 'layouts.app'))
 
 @section('pageTitle') Coupons: Details @stop
 
@@ -24,5 +24,5 @@
 
 @section('javascript')
     @parent
-    <script type="text/javascript" src="{{ Market::moduleAsset('siravel', 'js/coupons.js', 'application/javascript') }}"></script>
+    <script type="text/javascript" src="{{ Market::moduleAsset('js/coupons.js', 'application/javascript') }}"></script>
 @endsection

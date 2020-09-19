@@ -1,4 +1,4 @@
-@extends('siravel::layouts.dashboard')
+@extends( (isset($bladeLayout) && !empty($bladeLayout)) ?: \Illuminate\Support\Facades\Config::get('pedreiro.blade_layout', 'layouts.app'))
 
 @section('pageTitle') Order Items: Edit @stop
 

@@ -87,14 +87,14 @@ class Market
      *
      * @return string
      */
-    public function moduleAsset($module, $path, $contentType = 'null')
+    public function moduleAsset($path, $contentType = 'null')
     {
         // $assetPath = base_path(Config::get('siravel.module-directory').'/'.ucfirst($module).'/Assets/'.$path);
         $assetPath = __DIR__.'/../publishes/assets/'.$path;
 
-        if (!is_file($assetPath)) {
-            $assetPath = '/assets/'.$module.'/'.$path;
-        }
+        // if (!is_file($assetPath)) {
+        //     $assetPath = '/assets/'.$module.'/'.$path;
+        // }
 
         // @todo
         return $assetPath;

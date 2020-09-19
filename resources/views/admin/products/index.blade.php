@@ -1,4 +1,4 @@
-@extends('siravel::layouts.dashboard')
+@extends( (isset($bladeLayout) && !empty($bladeLayout)) ?: \Illuminate\Support\Facades\Config::get('pedreiro.blade_layout', 'layouts.app'))
 
 @section('pageTitle') Products @stop
 
@@ -78,6 +78,6 @@
 @section('javascript')
 
     @parent
-    {!! Minify::javascript(Market::moduleAsset('siravel', 'js/products.js', 'application/javascript')) !!}
+    {!! Minify::javascript(Market::moduleAsset('js/products.js', 'application/javascript')) !!}
 
 @endsection

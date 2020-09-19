@@ -1,10 +1,10 @@
-@extends('siravel::layouts.dashboard')
+@extends( (isset($bladeLayout) && !empty($bladeLayout)) ?: \Illuminate\Support\Facades\Config::get('pedreiro.blade_layout', 'layouts.app'))
 
 @section('pageTitle') Subscription Plans: Edit @stop
 
 @section('stylesheets')
     @parent
-    <link rel="stylesheet" type="text/css" href="{{ Market::moduleAsset('siravel', 'css/store.css', 'text/css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ Market::moduleAsset('css/store.css', 'text/css') }}">
 @stop
 
 @section('content')
@@ -92,7 +92,7 @@
 
 @section('javascript')
     @parent
-    <script type="text/javascript" src="{{ Market::moduleAsset('siravel', 'js/plans.js', 'application/javascript') }}"></script>
+    <script type="text/javascript" src="{{ Market::moduleAsset('js/plans.js', 'application/javascript') }}"></script>
     <script type="text/javascript">
         _visualizeThePlan();
     </script>

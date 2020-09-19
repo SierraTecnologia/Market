@@ -30,6 +30,7 @@
         "sierratecnologia/pedreiro": "dev-master",
         "sierratecnologia/locaravel": "dev-master",
         "sierratecnologia/bancario": "dev-master",
+        "sierratecnologia/media-manager": "dev-master",
         "sierratecnologia/crypto": "dev-master",
         "sierratecnologia/payment-laravel": "dev-master"
     },
