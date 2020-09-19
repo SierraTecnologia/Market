@@ -9,7 +9,7 @@ use Exception;
 use Illuminate\Support\Facades\Schema;
 use Market\Models\Coupon;
 use SierraTecnologia\Cashier\Subscription;
-use Support\Services\RiCaService;
+use Pedreiro\Services\RiCaService;
 
 class CouponService
 {
