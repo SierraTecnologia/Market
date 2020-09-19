@@ -1,6 +1,6 @@
 <?php
 
-namespace Market\Http\Controllers;
+namespace Market\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Market\Http\Controllers\Controller;

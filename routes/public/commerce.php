@@ -4,13 +4,17 @@ Route::get('commerce', 'StoreController@index')->name('home');
 
 Route::get('cart/contents', 'CartController@getContents')->name('cart.contents');
 Route::get('cart/empty', 'CartController@emptyCart')->name('cart.empty');
-Route::group(['middleware' => ['isAjax']], function () {
+
+
+Route::group(['middleware' => ['isAjax'], 'namespace' => 'Api'], function () {
     Route::get('cart', 'CartController@cart')->name('cart');
     Route::get('cart/count', 'CartController@cartCount')->name('cart.count');
     Route::get('cart/change-count', 'CartController@changeCartCount')->name('cart.change-count');
     Route::get('cart/add', 'CartController@addToCart')->name('cart.add');
     Route::get('cart/remove', 'CartController@removeFromCart')->name('cart.remove');
 });
+
+
 Route::get('products', 'ProductController@all')->name('products');
 Route::get('product/{url}', 'ProductController@show')->name('product');
 Route::get('plans', 'PlanController@all')->name('plans');
@@ -47,7 +51,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('process/last-card', 'CheckoutController@processWithLastCard')->name('process.last-card');
     Route::get('complete', 'CheckoutController@complete')->name('purchase.complete');
     Route::get('failed', 'CheckoutController@failed')->name('purchase.failed');
-    Route::group(['prefix' => 'favorites', 'middleware' => ['isAjax']], function () {
+
+    // Api
+    Route::group(['prefix' => 'favorites', 'middleware' => ['isAjax'], 'namespace' => 'Api'], function () {
         Route::get('/', 'FavoriteController@all')->name('favorites');
         Route::get('add/{productId}', 'FavoriteController@add')->name('favorites.add');
         Route::get('remove/{productId}', 'FavoriteController@remove')->name('favorites.remove');
