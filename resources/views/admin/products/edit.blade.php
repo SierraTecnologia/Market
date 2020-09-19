@@ -10,7 +10,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('market::products.breadcrumbs', ['location' => ['edit']])
+        @include('market::admin.products.breadcrumbs', ['location' => ['edit']])
 
         @include('market::products.tabs', $tabs)
     </div>

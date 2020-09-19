@@ -25,7 +25,7 @@
     <div class="col-md-12">
         <div class="row raw-margin-bottom-24">
             <div class="col-md-6 mt-2">
-                @include('market::transactions.breadcrumbs', ['location' => ['edit']])
+                @include('market::admin.transactions.breadcrumbs', ['location' => ['edit']])
             </div>
             <div class="col-md-6 mt-2 text-right">
                 <h4 class="raw-margin-top-8">#{{ $transaction->uuid }}</h4>

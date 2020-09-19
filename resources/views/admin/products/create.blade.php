@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12 mt-2">
-        @include('market::products.breadcrumbs', ['location' => ['create']])
+        @include('market::admin.products.breadcrumbs', ['location' => ['create']])
 
         {!! Form::open(['route' => 'admin'.'.products.store', 'files' => true]) !!}
 
