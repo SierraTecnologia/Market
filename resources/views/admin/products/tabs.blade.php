@@ -24,25 +24,25 @@
 
 
 @if ((request('tab') == 'details') || isset($tabs['details']))
-    @include('market::products.tabs.details')
+    @include('market::admin.products.tabs.details')
 @endif
 
 @if (request('tab') == 'variants')
-    @include('market::products.tabs.variants')
+    @include('market::admin.products.tabs.variants')
 @endif
 
 @if (request('tab') == 'discount')
-    @include('market::products.tabs.discount')
+    @include('market::admin.products.tabs.discount')
 @endif
 
 @if (request('tab') == 'download')
-    @include('market::products.tabs.download')
+    @include('market::admin.products.tabs.download')
 @endif
 
 @if (request('tab') == 'dimensions')
-    @include('market::products.tabs.dimensions')
+    @include('market::admin.products.tabs.dimensions')
 @endif
 
 @if (request('tab') == 'images')
-    @include('market::products.tabs.images')
+    @include('market::admin.products.tabs.images')
 @endif

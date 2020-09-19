@@ -12,7 +12,7 @@
     <div class="col-md-12 mt-2">
         @include('market::admin.products.breadcrumbs', ['location' => ['edit']])
 
-        @include('market::products.tabs', $tabs)
+        @include('market::admin.products.tabs', $tabs)
     </div>
 
 @endsection
