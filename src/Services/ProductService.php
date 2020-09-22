@@ -4,7 +4,7 @@ namespace Market\Services;
 
 use Market\Facades\RiCaServiceFacade as Market;
 use Illuminate\Support\Facades\Config;
-use Stalker\Services\Midia\FileService;
+use Stalker\Services\FileService;
 use Market\Repositories\ProductRepository;
 use Market\Repositories\ProductVariantRepository;
 
