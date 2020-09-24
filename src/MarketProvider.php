@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Log;
 use Market\Facades\Market as MarketFacade;
-
-use Market\Interfaces\Helpers\StoreHelper;
+use Market\Facades\StoreHelper;
 
 use Market\Services\CartService;
 use Market\Services\CustomerProfileService;
 use Market\Services\LogisticService;
 use Market\Services\MarketService;
 use Market\Services\ProductService;
+use Market\Services\StoreHelperService;
 use Muleta\Traits\Providers\ConsoleTools;
 use Route;
 
@@ -33,11 +33,12 @@ class MarketProvider extends ServiceProvider
 
     public static $aliasProviders = [
         'Market' => \Market\Facades\Market::class,
+        'StoreHelper' => \Market\Facades\StoreHelper::class,
     ];
 
     public static $providers = [
 
-        \Support\SupportProviderService::class,
+        \Pedreiro\PedreiroProviderService::class,
 
         
     ];
@@ -137,6 +138,24 @@ class MarketProvider extends ServiceProvider
         //     ],
         // ],
     ];
+    
+    /**
+     * Register the tool's routes.
+     *
+     * @return void
+     */
+    protected function routes()
+    {
+        if ($this->app->routesAreCached()) {
+            return;
+        }
+
+
+        /**
+         * Porteiro; Routes
+         */
+        $this->loadRoutesForRiCa(__DIR__.'/../routes');
+    }
 
     /**
      * Alias the services in the boot.
@@ -160,23 +179,6 @@ class MarketProvider extends ServiceProvider
         $loader->alias('StoreHelper', StoreHelper::class);
     }
 
-    /**
-     * Register the tool's routes.
-     *
-     * @return void
-     */
-    protected function routes()
-    {
-        if ($this->app->routesAreCached()) {
-            return;
-        }
-
-
-        /**
-         * Market; Routes
-         */
-        $this->loadRoutesForRiCa(__DIR__.'/../routes');
-    }
 
     /**
      * Register the services.
@@ -197,6 +199,11 @@ class MarketProvider extends ServiceProvider
         $this->app->singleton(
             'market', function () {
                 return new Market();
+            }
+        );
+        $this->app->singleton(
+            'storeHelper', function () {
+                return app()->make(StoreHelperService::class);
             }
         );
         

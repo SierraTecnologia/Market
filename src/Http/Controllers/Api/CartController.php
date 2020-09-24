@@ -4,10 +4,10 @@ namespace Market\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Market\Http\Controllers\Controller;
-use Market\Interfaces\Helpers\StoreHelper;
 use Market\Services\CartService;
 use Muleta\Services\RiCaResponseService;
 use Redirect;
+use StoreHelper;
 
 class CartController extends Controller
 {

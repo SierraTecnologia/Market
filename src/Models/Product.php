@@ -7,7 +7,7 @@ use Market\Models\MarketModel;
 use Market\Services\CartService;
 use Market\Services\ProductService;
 use MediaManager\Models\Image;
-use Stalker\Services\FileService;
+use MediaManager\Services\FileService;
 
 class Product extends MarketModel
 {
