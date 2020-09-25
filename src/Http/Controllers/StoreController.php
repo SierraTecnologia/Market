@@ -23,7 +23,7 @@ class StoreController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $products = $this->products->getPublishedProducts()->paginate(25);
         $plans = $this->plans->allEnabled();
