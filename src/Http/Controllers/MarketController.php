@@ -13,18 +13,18 @@ class MarketController extends Base
     /**
      * @var string
      */
-    protected $title = 'Markets';
-    protected $model = Market::class;
+    public $title = 'Markets';
+    public $model = Market::class;
 
     /**
      * @var string
      */
-    protected $description = 'Listagem de Markets.';
+    public $description = 'Listagem de Markets.';
 
     /**
      * @var array
      */
-    protected $columns = [
+    public $columns = [
         'name' => 'getName',
     ];
 
