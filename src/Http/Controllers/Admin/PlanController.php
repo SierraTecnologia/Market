@@ -76,7 +76,7 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $plan = $this->service->find($id);
         $customers = $this->service->getSubscribers($plan);
@@ -150,7 +150,7 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $result = $this->service->destroy($id);
 

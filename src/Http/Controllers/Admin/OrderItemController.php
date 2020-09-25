@@ -21,7 +21,7 @@ class OrderItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $orderItem = $this->service->find($id);
 

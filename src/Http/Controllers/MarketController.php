@@ -211,7 +211,7 @@ class MarketController extends Base
     //  * @param  int  $id
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function show($id)
+    // public function show(Request $request, $id)
     // {
     //     $order = Market::findOrFail($id);
     //     return view('market::admin.orders.show', compact('order'));
@@ -224,7 +224,7 @@ class MarketController extends Base
     //  * @param  int  $id
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function edit($id)
+    // public function edit(Request $request, $id)
     // {
     //     $order = Market::find($id);
 
@@ -261,7 +261,7 @@ class MarketController extends Base
     //  * @param  int  $id
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function destroy($id)
+    // public function destroy(Request $request, $id)
     // {
     //     $order = Market::findOrFail($id);
     //     $order->delete();
