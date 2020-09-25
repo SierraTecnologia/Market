@@ -67,7 +67,7 @@
               </li>
 
               <li>
-                  <a href="{{ route('notifications.unread') }}" class="text-warning" style="margin-top: -4px;">
+                  <a href="{{ route('profile.transmissor.notifications.unread') }}" class="text-warning" style="margin-top: -4px;">
                       <span class="badge badge-{{ $currentUser->notification_count + $currentUser->message_count > 0 ? 'important' : 'fade' }} popover-with-html" data-content="Lembrete de mensagem" id="notification-count">
                           {{ $currentUser->notification_count + $currentUser->message_count }}
                       </span>
