@@ -29,7 +29,7 @@
                    <i class="fa {{!$isFollowing ? 'fa-plus' : 'fa-minus'}}"></i> {{ !$isFollowing ? 'Seguir' : 'Deixar de seguir' }}
                 </a>
 
-                <a class="btn btn-default btn-block" href="{{ route('messages.create', $topic->user->id) }}">
+                <a class="btn btn-secondary btn-block" href="{{ route('profile.transmissor.messages.create', $topic->user->id) }}">
                    <i class="fa fa-envelope-o"></i> Envie uma mensagem
                 </a>
             </span>
