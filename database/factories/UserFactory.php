@@ -11,18 +11,20 @@
 |
 */
 
-$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
-    static $password;
+$factory->define(
+    App\Models\User::class, function (Faker\Generator $faker) {
+        static $password;
 
-    return [
+        return [
         'name'           => $faker->name,
         'email'          => $faker->unique()->safeEmail,
         'password'       => $password ?: $password = bcrypt('secret'),
         'remember_token' => \Illuminate\Support\Str::random(10),
         'role_id' => (new Role)->newQuery()->inRandomOrder()->firstOrFail()->id,
         'login' => $faker->userName,
-    ];
-});
+        ];
+    }
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -30,11 +32,13 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 |--------------------------------------------------------------------------
 */
 
-$factory->define(Market\Models\UserMeta::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    Market\Models\UserMeta::class, function (Faker\Generator $faker) {
+        return [
         'user_id' => 1,
         'phone' => $faker->phoneNumber,
         'marketing' => 1,
         'terms_and_cond' => 1,
-    ];
-});
+        ];
+    }
+);

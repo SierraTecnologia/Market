@@ -6,8 +6,9 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Cart::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Market\Models\Commerce\Cart::class, function (Faker\Generator $faker) {
+        return [
         'user_id' => 1,
         'entity_id' => 1,
         'entity_type' => \Market\Models\Commerce\Product::class,
@@ -16,8 +17,9 @@ $factory->define(\Market\Models\Commerce\Cart::class, function (Faker\Generator 
         'quantity' => 1,
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 
 /*
@@ -26,26 +28,30 @@ $factory->define(\Market\Models\Commerce\Cart::class, function (Faker\Generator 
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Order::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Market\Models\Commerce\Order::class, function (Faker\Generator $faker) {
+        return [
         'uuid' => 'foo-bar-foo-bar',
         'user_id' => 1,
         'transaction_id' => 999,
         'details' => $faker->paragraph().' '.$faker->paragraph(),
-        'shipping_address' => json_encode([
+        'shipping_address' => json_encode(
+            [
             'address' => '21 Iceboat Terr',
             'city' => 'Toronto',
             'country' => 'Canada',
             'state' => 'Ontario',
-        ]),
+            ]
+        ),
         'is_shipped' => false,
         'tracking_number' => null,
         'notes' => 'This is a test order duh',
         'status' => 'pending',
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 
 /*
@@ -54,8 +60,9 @@ $factory->define(\Market\Models\Commerce\Order::class, function (Faker\Generator
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Product::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Market\Models\Commerce\Product::class, function (Faker\Generator $faker) {
+        return [
         'name' => 'dumb',
         'url' => 'dumb',
         'code' => 'a98s7d9',
@@ -78,8 +85,9 @@ $factory->define(\Market\Models\Commerce\Product::class, function (Faker\Generat
         'details' => $faker->paragraph().' '.$faker->paragraph(),
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -87,15 +95,17 @@ $factory->define(\Market\Models\Commerce\Product::class, function (Faker\Generat
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Variant::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Market\Models\Commerce\Variant::class, function (Faker\Generator $faker) {
+        return [
         'product_id' => 1,
         'key' => 'Size',
         'value' => 'small|medium|large(+2)[+2]',
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 /*
 |--------------------------------------------------------------------------
@@ -103,8 +113,9 @@ $factory->define(\Market\Models\Commerce\Variant::class, function (Faker\Generat
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Transaction::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Market\Models\Commerce\Transaction::class, function (Faker\Generator $faker) {
+        return [
         'uuid' => 'foo-bar-foo-bar',
         'user_id' => 1,
         'provider' => 'sitecpayment',
@@ -119,16 +130,19 @@ $factory->define(\Market\Models\Commerce\Transaction::class, function (Faker\Gen
         'provider_date' => 20160930,
         'provider_dispute' => null,
         'notes' => null,
-        'cart' => json_encode([[
+        'cart' => json_encode(
+            [[
             'price' => 19.00,
             'quantity' => 1,
             'name' => 'StarWars',
-        ]]),
+            ]]
+        ),
         'response' => json_encode(['message' => 'success']),
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
-    ];
-});
+        ];
+    }
+);
 
 
 /*
@@ -137,8 +151,9 @@ $factory->define(\Market\Models\Commerce\Transaction::class, function (Faker\Gen
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Coupon::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Market\Models\Commerce\Coupon::class, function (Faker\Generator $faker) {
+        return [
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
         'start_date' => $faker->datetime(),
@@ -149,8 +164,9 @@ $factory->define(\Market\Models\Commerce\Coupon::class, function (Faker\Generato
         'amount' => 5,
         'limit' => 1,
         'sitecpayment_id' => 'coupon-A',
-    ];
-});
+        ];
+    }
+);
 
 
 /*
@@ -159,8 +175,9 @@ $factory->define(\Market\Models\Commerce\Coupon::class, function (Faker\Generato
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Plan::class, function (Faker\Generator $faker) {
-    return [
+$factory->define(
+    \Market\Models\Commerce\Plan::class, function (Faker\Generator $faker) {
+        return [
         'name' => 'cheap hosting',
         'uuid' => \Illuminate\Support\Str::random(20),
         'amount' => 9999,
@@ -175,5 +192,6 @@ $factory->define(\Market\Models\Commerce\Plan::class, function (Faker\Generator 
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
 
-    ];
-});
+        ];
+    }
+);

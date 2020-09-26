@@ -1,4 +1,5 @@
-function _visualizeThePlan() {
+function _visualizeThePlan()
+{
     if ($('#Name').val() > '') {
         $('.plan-title').text($('#Name').val());
     } else {
@@ -20,28 +21,40 @@ function _visualizeThePlan() {
     $('.plan-description').text($('#Description').val());
 }
 
-$('input, textarea, select').bind('change keyup', function(){
-    _visualizeThePlan();
-});
+$('input, textarea, select').bind(
+    'change keyup', function () {
+        _visualizeThePlan();
+    }
+);
 
-$(document).ready(function(){
-    $(".cancel-form").submit(function(e){
-        e.preventDefault();
-        var _form = $(this);
-        $('#cancelSubscription').modal('show');
-        $('#cancelBtn').bind('click', function(){
-            _form[0].submit();
-            $('#cancelSubscription').modal('hide');
-        });
-    });
+$(document).ready(
+    function () {
+        $(".cancel-form").submit(
+            function (e) {
+                e.preventDefault();
+                var _form = $(this);
+                $('#cancelSubscription').modal('show');
+                $('#cancelBtn').bind(
+                    'click', function () {
+                        _form[0].submit();
+                        $('#cancelSubscription').modal('hide');
+                    }
+                );
+            }
+        );
 
-    $('#deletePlanForm').submit(function(e){
-        e.preventDefault();
-        $('#deletePlanDialog').modal('show');
-    });
+        $('#deletePlanForm').submit(
+            function (e) {
+                e.preventDefault();
+                $('#deletePlanDialog').modal('show');
+            }
+        );
 
-    $('#deletePlanBtn').click(function(e){
-        $('#deletePlanForm')[0].submit();
-        $('#deletePlanDialog').modal('hide');
-    });
-});
+        $('#deletePlanBtn').click(
+            function (e) {
+                $('#deletePlanForm')[0].submit();
+                $('#deletePlanDialog').modal('hide');
+            }
+        );
+    }
+);
