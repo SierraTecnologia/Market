@@ -82,6 +82,9 @@
     },
     "extra": {
         "laravel": {
+            "providers": [
+                "Market\\MarketProvider"
+            ],
             "dont-discover": [
                 "sentry/sentry-laravel",
                 "laravel/cashier",

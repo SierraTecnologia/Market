@@ -42,7 +42,7 @@ if (config('market.have-plans', false)) {
 | Coupon Routes
 |--------------------------------------------------------------------------
 */
-if (config('market.have-plans', false)) {
+if (config('market.have-coupons', false)) {
     Route::resource('coupons', 'CouponController', ['except' => ['edit', 'update']]);
     Route::post('coupons/search', 'CouponController@search');
 }
