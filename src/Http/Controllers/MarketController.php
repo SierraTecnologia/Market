@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Market\Models\Code\Market;
 use Yajra\Datatables\Datatables;
 use Facilitador\Exceptions\Exception;
-use Facilitador\Http\Controllers\Admin\Base;
+use Pedreiro\Http\Controllers\Admin\Base;
 
 class MarketController extends Base
 {
