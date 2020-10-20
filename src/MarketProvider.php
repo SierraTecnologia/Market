@@ -154,7 +154,7 @@ class MarketProvider extends ServiceProvider
         /**
          * Porteiro; Routes
          */
-        $this->loadRoutesForRiCa(__DIR__.'/../routes');
+        $this->loadRoutesForRiCa(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'routes');
     }
 
     /**
@@ -296,7 +296,7 @@ class MarketProvider extends ServiceProvider
         $this->publishes(
             [
             // Paths
-            $this->getPublishesPath('config/sitec') => config_path('sitec'),
+            $this->getPublishesPath('config'.DIRECTORY_SEPARATOR.'sitec') => config_path('sitec'),
             ],
             ['config',  'sitec', 'sitec-config']
         );
@@ -317,7 +317,7 @@ class MarketProvider extends ServiceProvider
         $this->loadViewsFrom($viewsPath, 'market');
         $this->publishes(
             [
-            $viewsPath => base_path('resources/views/vendor/market'),
+            $viewsPath => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'market'),
             ],
             ['views',  'sitec', 'sitec-views']
         );
@@ -328,7 +328,7 @@ class MarketProvider extends ServiceProvider
         // Publish lanaguage files
         $this->publishes(
             [
-            $this->getResourcesPath('lang') => resource_path('lang/vendor/market')
+            $this->getResourcesPath('lang') => resource_path('lang'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'market')
             ],
             ['lang',  'sitec', 'sitec-lang', 'translations']
         );
@@ -347,7 +347,7 @@ class MarketProvider extends ServiceProvider
             'logging.channels.sitec-market',
             [
             'driver' => 'single',
-            'path' => storage_path('logs/sitec-market.log'),
+            'path' => storage_path('logs'.DIRECTORY_SEPARACTOR.'sitec-market.log'),
             'level' => env('APP_LOG_LEVEL', 'debug'),
             ]
         );
