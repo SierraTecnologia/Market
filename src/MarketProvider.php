@@ -186,7 +186,7 @@ class MarketProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom($this->getPublishesPath('config/sitec/market.php'), 'sitec.market');
+        $this->mergeConfigFrom($this->getPublishesPath('config'.DIRECTORY_SEPARATOR.'sitec'.DIRECTORY_SEPARATOR.'market.php'), 'sitec.market');
         
 
         $this->setProviders();
@@ -195,7 +195,7 @@ class MarketProvider extends ServiceProvider
 
 
         // Register Migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'database'.DIRECTORY_SEPARATOR.'migrations');
 
         $this->app->singleton(
             'market',
