@@ -154,7 +154,7 @@ class MarketProvider extends ServiceProvider
         /**
          * Porteiro; Routes
          */
-        $this->loadRoutesForRiCa(__DIR__.'/../routes');
+        $this->loadRoutesForRiCa(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'routes');
     }
 
     /**
@@ -186,7 +186,7 @@ class MarketProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom($this->getPublishesPath('config/sitec/market.php'), 'sitec.market');
+        $this->mergeConfigFrom($this->getPublishesPath('config'.DIRECTORY_SEPARATOR.'sitec'.DIRECTORY_SEPARATOR.'market.php'), 'sitec.market');
         
 
         $this->setProviders();
@@ -195,7 +195,7 @@ class MarketProvider extends ServiceProvider
 
 
         // Register Migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'database'.DIRECTORY_SEPARATOR.'migrations');
 
         $this->app->singleton(
             'market',
@@ -296,7 +296,7 @@ class MarketProvider extends ServiceProvider
         $this->publishes(
             [
             // Paths
-            $this->getPublishesPath('config/sitec') => config_path('sitec'),
+            $this->getPublishesPath('config'.DIRECTORY_SEPARATOR.'sitec') => config_path('sitec'),
             ],
             ['config',  'sitec', 'sitec-config']
         );
@@ -317,7 +317,7 @@ class MarketProvider extends ServiceProvider
         $this->loadViewsFrom($viewsPath, 'market');
         $this->publishes(
             [
-            $viewsPath => base_path('resources/views/vendor/market'),
+            $viewsPath => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'market'),
             ],
             ['views',  'sitec', 'sitec-views']
         );
@@ -328,7 +328,7 @@ class MarketProvider extends ServiceProvider
         // Publish lanaguage files
         $this->publishes(
             [
-            $this->getResourcesPath('lang') => resource_path('lang/vendor/market')
+            $this->getResourcesPath('lang') => resource_path('lang'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'market')
             ],
             ['lang',  'sitec', 'sitec-lang', 'translations']
         );
@@ -347,7 +347,7 @@ class MarketProvider extends ServiceProvider
             'logging.channels.sitec-market',
             [
             'driver' => 'single',
-            'path' => storage_path('logs/sitec-market.log'),
+            'path' => storage_path('logs'.DIRECTORY_SEPARATOR.'sitec-market.log'),
             'level' => env('APP_LOG_LEVEL', 'debug'),
             ]
         );
