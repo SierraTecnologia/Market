@@ -6,8 +6,7 @@
 
     <div class="col-md-12 mt-2">
         @include('market::admin.products.breadcrumbs', ['location' => ['create']])
-
-        {!! Form::open(['route' => 'admin'.'.products.store', 'files' => true]) !!}
+        {!! Form::open(['route' => 'admin.market.products.store', 'files' => true]) !!}
 
             {!! FormMaker::setColumns(2)->fromTable('products', \Illuminate\Support\Facades\Config::get('siravel.forms.details.identity')) !!}
             {!! FormMaker::setColumns(2)->fromTable('products', \Illuminate\Support\Facades\Config::get('siravel.forms.details.price')) !!}

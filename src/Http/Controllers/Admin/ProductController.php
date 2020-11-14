@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Market;
 use Market\Http\Controllers\SitecController;
 use Market\Http\Requests\ProductRequest;
-// use Market\Repositories\ImageRepository;
+// use MediaManager\Repositories\ImageRepository;
 use Market\Repositories\ProductVariantRepository;
 use Market\Services\ProductService;
 

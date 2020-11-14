@@ -2,7 +2,7 @@
 
 namespace Market\Http\Requests;
 
-use Market\Models\Commerce\Coupon;
+use Market\Models\Coupon;
 
 class CouponRequest extends CommerceRequest
 {

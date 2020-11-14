@@ -2,7 +2,7 @@
 
 namespace Market\Http\Requests;
 
-use Market\Models\Commerce\Plan;
+use Market\Models\Plan;
 
 class PlanRequest extends CommerceRequest
 {

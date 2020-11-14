@@ -2,7 +2,7 @@
 
 namespace Market\Services;
 
-use Market\Facades\RiCaServiceFacade as Market;
+use Pedreiro\Facades\RiCaServiceFacade as RiCaService;
 use Illuminate\Support\Facades\Config;
 use MediaManager\Services\FileService;
 use Market\Repositories\ProductRepository;
@@ -56,17 +56,15 @@ class ProductService
      */
     public function create($payload)
     {
-        $payload['url'] = Market::convertToURL($payload['url']);
+        $payload['url'] = RiCaService::convertToURL($payload['url']);
 
-        if (isset($payload['file'])) {
-            $downloadFile = app(FileService::class)->saveFile($payload['file'], 'downloads');
+        if (isset($payload['file']) && $downloadFile = app(FileService::class)->saveFile($payload['file'], 'downloads')) {
             $payload['file'] = $downloadFile['name'];
         } else {
             $payload['file'] = '';
         }
 
-        if (isset($payload['hero_image'])) {
-            $heroFile = app(FileService::class)->saveFile($payload['hero_image'], 'heroes', [], true);
+        if (isset($payload['hero_image']) && $heroFile = app(FileService::class)->saveFile($payload['hero_image'], 'heroes', [], true)) {
             $payload['hero_image'] = $heroFile['name'];
         } else {
             $payload['hero_image'] = '';
@@ -105,7 +103,7 @@ class ProductService
     {
         $product = $this->repo->find($id);
 
-        $payload['url'] = Market::convertToURL($payload['url']);
+        $payload['url'] = RiCaService::convertToURL($payload['url']);
 
         if (isset($payload['hero_image'])) {
             $heroFile = app(FileService::class)->saveFile($payload['hero_image'], 'heroes', [], true);
@@ -135,8 +133,7 @@ class ProductService
     {
         $product = $this->repo->find($id);
 
-        if (isset($payload['file'])) {
-            $savedFile = app(FileService::class)->saveFile($payload['file'], 'downloads');
+        if (isset($payload['file']) && $savedFile = app(FileService::class)->saveFile($payload['file'], 'downloads')) {
             $payload['file'] = $savedFile['name'];
         } else {
             $payload['file'] = $product->file;

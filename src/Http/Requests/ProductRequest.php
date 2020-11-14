@@ -2,7 +2,7 @@
 
 namespace Market\Http\Requests;
 
-use Market\Models\Commerce\Product;
+use Market\Models\Product;
 
 class ProductRequest extends CommerceRequest
 {
@@ -13,6 +13,6 @@ class ProductRequest extends CommerceRequest
      */
     public function rules()
     {
-        return Product::$rules;
+        return app(Product::class)->rules;
     }
 }
