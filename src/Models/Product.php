@@ -8,6 +8,7 @@ use Market\Services\CartService;
 use Market\Services\ProductService;
 use MediaManager\Models\Image;
 use MediaManager\Services\FileService;
+use Route;
 
 class Product extends MarketModel
 {

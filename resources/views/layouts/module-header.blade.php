@@ -6,6 +6,11 @@
                     <a class="btn btn-primary" href="{!! route('admin.'.$module.'.create') !!}">Add New</a>
                 </li>
             @endif
+            @if (Route::has('admin.market.'.$module.'.create'))
+                <li class="nav-item">
+                    <a class="btn btn-primary" href="{!! route('admin.market.'.$module.'.create') !!}">Add New</a>
+                </li>
+            @endif
         </ul>
         {!! Form::open(['url' => market()->url($module.'/search'), 'class' => 'form-inline mt-2']) !!}
             <input class="form-control mr-sm-2" name="term" type="search" placeholder="Search" aria-label="Search">

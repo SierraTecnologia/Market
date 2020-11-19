@@ -2,7 +2,7 @@
 
 namespace Market\Http\Requests;
 
-use Market\Models\Commerce\Transaction;
+use Market\Models\Transaction;
 
 class TransactionsRequest extends CommerceRequest
 {

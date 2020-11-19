@@ -33,7 +33,7 @@
         "sierratecnologia/locaravel": "^0.4.0",
         "sierratecnologia/bancario": "^0.4.0",
         "sierratecnologia/media-manager": "^0.4.0",
-        "sierratecnologia/payment-laravel": "^0.4.0"
+        "sierratecnologia/payment-laravel": "^0.3.0 | ^0.4.0"
     },
     "autoload": {
         "classmap": [

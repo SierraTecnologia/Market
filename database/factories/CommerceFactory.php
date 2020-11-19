@@ -6,11 +6,11 @@
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Cart::class, function (Faker\Generator $faker) {
+$factory->define(\Market\Models\Cart::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'entity_id' => 1,
-        'entity_type' => \Market\Models\Commerce\Product::class,
+        'entity_type' => \Market\Models\Product::class,
         'product_variants' => '',
         'address' => '',
         'quantity' => 1,
@@ -26,7 +26,7 @@ $factory->define(\Market\Models\Commerce\Cart::class, function (Faker\Generator 
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Order::class, function (Faker\Generator $faker) {
+$factory->define(\Market\Models\Order::class, function (Faker\Generator $faker) {
     return [
         'uuid' => 'foo-bar-foo-bar',
         'user_id' => 1,
@@ -54,7 +54,7 @@ $factory->define(\Market\Models\Commerce\Order::class, function (Faker\Generator
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Product::class, function (Faker\Generator $faker) {
+$factory->define(\Market\Models\Product::class, function (Faker\Generator $faker) {
     return [
         'name' => 'dumb',
         'url' => 'dumb',
@@ -87,7 +87,7 @@ $factory->define(\Market\Models\Commerce\Product::class, function (Faker\Generat
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Variant::class, function (Faker\Generator $faker) {
+$factory->define(\Market\Models\Variant::class, function (Faker\Generator $faker) {
     return [
         'product_id' => 1,
         'key' => 'Size',
@@ -103,7 +103,7 @@ $factory->define(\Market\Models\Commerce\Variant::class, function (Faker\Generat
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Transaction::class, function (Faker\Generator $faker) {
+$factory->define(\Market\Models\Transaction::class, function (Faker\Generator $faker) {
     return [
         'uuid' => 'foo-bar-foo-bar',
         'user_id' => 1,
@@ -137,7 +137,7 @@ $factory->define(\Market\Models\Commerce\Transaction::class, function (Faker\Gen
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Coupon::class, function (Faker\Generator $faker) {
+$factory->define(\Market\Models\Coupon::class, function (Faker\Generator $faker) {
     return [
         'updated_at' => $faker->datetime(),
         'created_at' => $faker->datetime(),
@@ -159,7 +159,7 @@ $factory->define(\Market\Models\Commerce\Coupon::class, function (Faker\Generato
 |--------------------------------------------------------------------------
 */
 
-$factory->define(\Market\Models\Commerce\Plan::class, function (Faker\Generator $faker) {
+$factory->define(\Market\Models\Plan::class, function (Faker\Generator $faker) {
     return [
         'name' => 'cheap hosting',
         'uuid' => \Illuminate\Support\Str::random(20),
