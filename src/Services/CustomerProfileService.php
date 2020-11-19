@@ -26,7 +26,9 @@ class CustomerProfileService
     public function shippingAddress($key = null)
     {
         if (auth()->user()) {
-            $profile = auth()->user()->meta;
+            if (!$profile = auth()->user()->meta) {
+                return redirect('user/settings'); // @todo
+            }
             $address = json_decode($profile->shipping_address);
         } else {
             $address = Session::get('shipping_address', (object) []);
@@ -51,7 +53,9 @@ class CustomerProfileService
     public function billingAddress($key = null)
     {
         if (auth()->user()) {
-            $profile = auth()->user()->meta;
+            if (!$profile = auth()->user()->meta) {
+                return redirect('user/settings'); // @todo
+            }
             $address = json_decode($profile->billing_address);
         } else {
             $address = Session::get('billing_address', (object) []);

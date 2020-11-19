@@ -29,6 +29,6 @@ if (!function_exists('sortable')) {
 if (!function_exists('market')) {
     function market()
     {
-        return app(Market\Market::class);
+        return app(Market\Services\StoreHelperService::class);
     }
 }
