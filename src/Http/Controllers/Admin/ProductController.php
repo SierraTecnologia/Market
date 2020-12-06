@@ -136,6 +136,12 @@ class ProductController extends SitecController
      */
     public function setImages(Request $request)
     {
+        dd(
+
+            $request->all()
+        );
+
+
         foreach ($request->location as $location) {
             $result = $this->imageRepository->store(
                 [
