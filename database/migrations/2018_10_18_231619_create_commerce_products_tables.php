@@ -12,37 +12,39 @@ class CreateCommerceProductsTables extends Migration
      */
     public function up()
     {
-        Schema::create(config('siravel.db-prefix', '').'products', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('url')->nullable();
-            $table->string('code')->nullable();
-            $table->decimal('price')->nullable();
-            $table->string('weight')->nullable();
-            $table->string('width')->nullable();
-            $table->string('height')->nullable();
-            $table->string('depth')->nullable();
-            $table->decimal('discount')->default(0);
-            $table->string('hero_image')->nullable();
-            $table->string('notification')->nullable();
-            $table->string('discount_type')->nullable();
-            $table->date('discount_start_date')->nullable();
-            $table->date('discount_end_date')->nullable();
-            $table->integer('stock')->default(0);
-            $table->boolean('is_available')->default(false);
-            $table->boolean('is_published')->default(false);
-            $table->boolean('is_download')->default(false);
-            $table->boolean('is_featured')->default(false);
-            $table->string('file')->nullable();
-            $table->string('seo_description')->nullable();
-            $table->string('seo_keywords')->nullable();
-            $table->text('details')->nullable();
+        if (!Schema::hasTable(config('siravel.db-prefix', '').'products')) { // && ! Schema::hasColumn(config('siravel.db-prefix', '').'products', 'business_code')) {
+            Schema::create(config('siravel.db-prefix', '').'products', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+                $table->string('url')->nullable();
+                $table->string('code')->nullable();
+                $table->decimal('price')->nullable();
+                $table->string('weight')->nullable();
+                $table->string('width')->nullable();
+                $table->string('height')->nullable();
+                $table->string('depth')->nullable();
+                $table->decimal('discount')->default(0);
+                $table->string('hero_image')->nullable();
+                $table->string('notification')->nullable();
+                $table->string('discount_type')->nullable();
+                $table->date('discount_start_date')->nullable();
+                $table->date('discount_end_date')->nullable();
+                $table->integer('stock')->default(0);
+                $table->boolean('is_available')->default(false);
+                $table->boolean('is_published')->default(false);
+                $table->boolean('is_download')->default(false);
+                $table->boolean('is_featured')->default(false);
+                $table->string('file')->nullable();
+                $table->string('seo_description')->nullable();
+                $table->string('seo_keywords')->nullable();
+                $table->text('details')->nullable();
 
-            // Criei pro jaedelivery
-            $table->integer('category_id')->nullable();
-            
-            $table->timestamps();
-        });
+                // Criei pro jaedelivery
+                $table->integer('category_id')->nullable();
+                
+                $table->timestamps();
+            });
+        }
     }
 
     /**

@@ -152,28 +152,3 @@ $factory->define(\Market\Models\Coupon::class, function (Faker\Generator $faker)
     ];
 });
 
-
-/*
-|--------------------------------------------------------------------------
-| Subscription Plans Factory
-|--------------------------------------------------------------------------
-*/
-
-$factory->define(\Market\Models\Plan::class, function (Faker\Generator $faker) {
-    return [
-        'name' => 'cheap hosting',
-        'uuid' => \Illuminate\Support\Str::random(20),
-        'amount' => 9999,
-        'interval' => 'monthly',
-        'currency' => 'usd',
-        'enabled' => true,
-        'sitecpayment_name' => 'cheap-package',
-        'trial_days' => 30,
-        'subscription_name' => 'default',
-        'descriptor' => 'dumb is dumb',
-        'description' => $faker->paragraph().' '.$faker->paragraph(),
-        'updated_at' => $faker->datetime(),
-        'created_at' => $faker->datetime(),
-
-    ];
-});
