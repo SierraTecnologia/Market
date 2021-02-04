@@ -38,7 +38,7 @@ class MarketProvider extends ServiceProvider
 
     public static $providers = [
 
-        \Pedreiro\PedreiroProviderService::class,
+        \Pedreiro\PedreiroServiceProvider::class,
 
         
     ];
