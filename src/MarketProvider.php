@@ -53,7 +53,8 @@ class MarketProvider extends ServiceProvider
             'icon_color' => "blue",
             'label_color' => "success",
             'section' => "admin",
-            'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            'feature' => 'commerce',
+            'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
         ],
 
         'Comercial' => [
