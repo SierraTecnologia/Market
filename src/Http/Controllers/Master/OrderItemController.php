@@ -1,6 +1,6 @@
 <?php
 
-namespace Market\Http\Controllers\Admin;
+namespace Market\Http\Controllers\Master;
 
 use Market\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class OrderItemController extends Controller
     {
         $orderItem = $this->service->find($id);
 
-        return view('market::admin.orders.item')->with('orderItem', $orderItem);
+        return view('market::master.orders.item')->with('orderItem', $orderItem);
     }
 
     /**

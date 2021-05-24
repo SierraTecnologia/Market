@@ -24,11 +24,11 @@
 
     <div class="col-md-12 mt-4">
 
-        {!! Form::model($order, ['route' => ['admin'.'.orders.update', $order->id], 'method' => 'patch']) !!}
+        {!! Form::model($order, ['route' => ['master'.'.orders.update', $order->id], 'method' => 'patch']) !!}
 
             <div class="row raw-margin-bottom-24">
                 <div class="col-md-6">
-                    @include('market::admin.orders.breadcrumbs', ['location' => ['edit']])
+                    @include('market::master.orders.breadcrumbs', ['location' => ['edit']])
                 </div>
                 <div class="col-md-6">
                     <h4 class="text-center raw-margin-top-8">#{{ $order->uuid }} @if ($order->is_shipped) <span class="fa fa-truck"></span> @endif</h4>
@@ -52,12 +52,12 @@
                         </tr>
                         @foreach($order->items as $item)
                         <tr>
-                            <td><a href="{{ url('admin'.'/orders/item/'.$item->id) }}">{{ $item->product->name }}</a></td>
+                            <td><a href="{{ url('master'.'/orders/item/'.$item->id) }}">{{ $item->product->name }}</a></td>
                             <td>{{ $item->quantity }}</td>
                             <td>{{ $item->total }}</td>
                             <td>{{ ucfirst($item->status) }}</td>
                             <td class="text-right">
-                                <a href="{{ url('admin'.'/orders/item/'.$item->id) }}" class="btn btn-sm btn-outline-primary">Review</a>
+                                <a href="{{ url('master'.'/orders/item/'.$item->id) }}" class="btn btn-sm btn-outline-primary">Review</a>
                             </td>
                         </tr>
                         @endforeach
@@ -97,7 +97,7 @@
         {!! Form::close() !!}
 
         @if ($order->status !== 'cancelled' && !$order->hasRefundedOrderItems())
-            {!! Form::open(['id' => 'cancelForm', 'url' => 'admin'.'/orders/cancel', 'method' => 'post', 'class' => 'inline-form float-left']) !!}
+            {!! Form::open(['id' => 'cancelForm', 'url' => 'master'.'/orders/cancel', 'method' => 'post', 'class' => 'inline-form float-left']) !!}
                 @input_maker_create('id', ['type' => 'hidden'], $order)
                 {!! Form::submit('Cancel Order', ['class' => 'btn btn-warning']) !!}
             {!! Form::close() !!}

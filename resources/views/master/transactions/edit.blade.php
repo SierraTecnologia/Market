@@ -25,7 +25,7 @@
     <div class="col-md-12">
         <div class="row raw-margin-bottom-24">
             <div class="col-md-6 mt-2">
-                @include('market::admin.transactions.breadcrumbs', ['location' => ['edit']])
+                @include('market::master.transactions.breadcrumbs', ['location' => ['edit']])
             </div>
             <div class="col-md-6 mt-2 text-right">
                 <h4 class="raw-margin-top-8">#{{ $transaction->uuid }}</h4>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    {!! Form::model($transaction, ['route' => ['admin'.'.transactions.update', $transaction->id], 'method' => 'patch']) !!}
+    {!! Form::model($transaction, ['route' => ['master'.'.transactions.update', $transaction->id], 'method' => 'patch']) !!}
 
     <div class="col-md-12">
         <div class="row">
@@ -85,7 +85,7 @@
                 @if ($order && $order->hasActiveOrderItems())
                     <div class="card bg-light border-dark">
                         <div class="card-header">
-                           <a href="{{ url('admin'.'/orders/'.$order->id.'/edit') }}">Order: #{{ $order->id }}</a>
+                           <a href="{{ url('master'.'/orders/'.$order->id.'/edit') }}">Order: #{{ $order->id }}</a>
                         </div>
                         <div class="card-body">
                             You must cancel this order if you wish to refund this transaction.
@@ -117,7 +117,7 @@
             {!! Form::close() !!}
 
             @if ($order && is_null($transaction->refund_date))
-                {!! Form::open(['id' => 'refundForm', 'url' => 'admin'.'/transactions/refund', 'method' => 'post', 'class' => 'inline-form float-left']) !!}
+                {!! Form::open(['id' => 'refundForm', 'url' => 'master'.'/transactions/refund', 'method' => 'post', 'class' => 'inline-form float-left']) !!}
                     @input_maker_create('uuid', ['type' => 'hidden'], $transaction)
                     {!! Form::submit('Refund', ['class' => 'btn btn-warning']) !!}
                 {!! Form::close() !!}

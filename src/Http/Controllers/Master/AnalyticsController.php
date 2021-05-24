@@ -1,6 +1,6 @@
 <?php
 
-namespace Market\Http\Controllers\Admin;
+namespace Market\Http\Controllers\Master;
 
 use App\Services\UserService;
 use Illuminate\Http\Request;
@@ -38,7 +38,7 @@ class AnalyticsController extends SitecController
         $subscriptions = $this->analyticsService->getSubscriptions();
         $data = $this->analyticsService->mergeTransactionsAndSubscriptions($months);
 
-        return view('market::admin.analytics')
+        return view('market::master.analytics')
             ->with('transactions', $transactions)
             ->with('balanceValues', [round($balanceValues['refunds'], 2), round($balanceValues['income'], 2)])
             ->with('transactionDays', $data['days'])

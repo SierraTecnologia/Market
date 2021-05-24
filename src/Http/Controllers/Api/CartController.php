@@ -15,9 +15,9 @@ class CartController extends Controller
     
     protected $cartService;
 
-    public function __construct(CartService $cartService=)
+    public function __construct(CartService $cartService)
     {
-        $this->cart = $cartService;=
+        $this->cart = $cartService;
     }
 
     /**
