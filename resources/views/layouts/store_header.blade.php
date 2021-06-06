@@ -11,7 +11,7 @@
                 <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></button>
                 <div class="dropdown-menu">
                     @if (auth()->user())
-                        <a class="dropdown-item" href="{{ url('user/settings') }}"><span class="fa fa-user"></span> Settings</a>
+                        <a class="dropdown-item" href="{{ url('profile/settings') }}"><span class="fa fa-user"></span> Settings</a>
                         <a class="dropdown-item" href="{{ route('account.profile') }}"><span class="fa fa-id-card"></span> Profile</a>
                         <a class="dropdown-item" href="{{ route('siravel.account.favorites') }}"><span class="fa fa-heart"></span> Favorites</a>
                         <a class="dropdown-item" href="{{ route('siravel.account.purchases') }}"><span class="fa fa-dollar"></span> Purchases</a>

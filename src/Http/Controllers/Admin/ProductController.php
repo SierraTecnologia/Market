@@ -56,7 +56,7 @@ class ProductController extends SitecController
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('market::admin.products.create');
     }
@@ -136,6 +136,11 @@ class ProductController extends SitecController
      */
     public function setImages(Request $request)
     {
+        dd('marketproduct', 
+            $request->all()
+        );
+
+
         foreach ($request->location as $location) {
             $result = $this->imageRepository->store(
                 [

@@ -14,6 +14,6 @@ class TransactionsRequest extends CommerceRequest
      */
     public function rules()
     {
-        return Transaction::$rules;
+        return app(Transaction::class)->rules;
     }
 }

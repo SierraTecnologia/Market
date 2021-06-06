@@ -11,7 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        $this->call(CommerceSeeder::class);
+        try {
+            //code...
+            // $this->call(UsersTableSeeder::class);
+            $this->call(CommerceSeeder::class);
+        } catch (\Throwable $th) {
+            //throw $th;
+            \Log::warning('Aqui deu ruim 21212!');
+        }
     }
 }

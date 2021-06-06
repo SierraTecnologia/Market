@@ -16,6 +16,10 @@ class StoreHelperService
         $this->cartService = $cartService;
     }
 
+    public function url($url)
+    {
+        return $this->storeUrl($url);
+    }
     public function storeUrl($url)
     {
         return url(config('commerce.store_url_prefix').'/'.$url);

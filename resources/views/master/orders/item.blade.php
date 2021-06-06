@@ -24,7 +24,7 @@
 
     <div class="col-md-12 mt-4">
 
-        @include('market::admin.orders.breadcrumbs', ['location' => [['Order' => url('admin'.'/orders/'.$orderItem->order_id.'/edit')], 'item']])
+        @include('market::master.orders.breadcrumbs', ['location' => [['Order' => url('master'.'/orders/'.$orderItem->order_id.'/edit')], 'item']])
 
         <div class="row">
             <div class="col-md-12 raw-margin-bottom-24">
@@ -38,7 +38,7 @@
                     <tbody>
                         <tr>
                             <th>Product</th>
-                            <td class="text-right"><a href="{!! route('admin.market.products.edit', [$orderItem->product_id]) !!}">{{ ucfirst($orderItem->product->name) }}</a></td>
+                            <td class="text-right"><a href="{!! route('master.market.products.edit', [$orderItem->product_id]) !!}">{{ ucfirst($orderItem->product->name) }}</a></td>
                         </tr>
                         <tr>
                             <th>Quantity</th>
@@ -82,7 +82,7 @@
                 </table>
                 @if (!$orderItem->was_refunded)
                     <div class="text-right">
-                        {!! Form::open(['id' => 'cancelItemForm', 'url' => 'admin'.'/orders/item/cancel', 'method' => 'post', 'class' => 'inline-form float-right']) !!}
+                        {!! Form::open(['id' => 'cancelItemForm', 'url' => 'master'.'/orders/item/cancel', 'method' => 'post', 'class' => 'inline-form float-right']) !!}
                             @input_maker_create('id', ['type' => 'hidden'], $orderItem)
                             {!! Form::submit('Cancel Order Item', ['class' => 'btn btn-warning']) !!}
                         {!! Form::close() !!}

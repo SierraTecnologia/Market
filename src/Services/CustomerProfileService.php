@@ -27,7 +27,7 @@ class CustomerProfileService
     {
         if (auth()->user()) {
             if (!$profile = auth()->user()->meta) {
-                return redirect('user/settings'); // @todo
+                return redirect('profile/settings'); // @todo
             }
             $address = json_decode($profile->shipping_address);
         } else {
@@ -54,7 +54,7 @@ class CustomerProfileService
     {
         if (auth()->user()) {
             if (!$profile = auth()->user()->meta) {
-                return redirect('user/settings'); // @todo
+                return redirect('profile/settings'); // @todo
             }
             $address = json_decode($profile->billing_address);
         } else {

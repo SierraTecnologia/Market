@@ -19,11 +19,10 @@ Route::group(['middleware' => 'isAjax'], function () {
     Route::post('products/variant/delete', 'ProductVariantController@deleteVariant');
 });
 Route::get('products/{id}/delete', [
-    'as' => 'siravel.products.delete',
+    'as' => 'products.delete',
     'uses' => 'ProductController@destroy',
 ]);
 
-Route::get('commerce-analytics', 'AnalyticsController@dashboard');
 
 /*
 |--------------------------------------------------------------------------
@@ -46,24 +45,3 @@ if (config('market.have-coupons', false)) {
     Route::resource('coupons', 'CouponController', ['except' => ['edit', 'update']]);
     Route::post('coupons/search', 'CouponController@search');
 }
-
-/*
-|--------------------------------------------------------------------------
-| Transactions
-|--------------------------------------------------------------------------
-*/
-Route::resource('transactions', 'TransactionController', ['except' => ['create', 'store', 'show', 'destroy']]);
-Route::post('transactions/search', 'TransactionController@search');
-Route::post('transactions/refund', 'TransactionController@refund');
-
-/*
-|--------------------------------------------------------------------------
-| Orders
-|--------------------------------------------------------------------------
-*/
-Route::resource('orders', 'OrderController', ['except' => ['create', 'store', 'show', 'destroy']]);
-Route::post('orders/search', 'OrderController@search');
-Route::post('orders/cancel', 'OrderController@cancel');
-
-Route::get('orders/item/{id}', 'OrderItemController@show');
-Route::post('orders/item/cancel', 'OrderItemController@cancel');

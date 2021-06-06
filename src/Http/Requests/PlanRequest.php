@@ -14,6 +14,6 @@ class PlanRequest extends CommerceRequest
      */
     public function rules()
     {
-        return Plan::$rules;
+        return app(Plan::class)->rules;
     }
 }
