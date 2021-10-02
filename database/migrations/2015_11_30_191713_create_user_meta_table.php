@@ -35,7 +35,7 @@ class CreateUserMetaTable extends Migration
         
 
         if (!Schema::hasColumn(config('app.db-prefix', '').'user_meta', 'marketing')) {
-            Schema::create(config('app.db-prefix', '').'user_meta', function (Blueprint $table) {
+            Schema::table(config('app.db-prefix', '').'user_meta', function (Blueprint $table) {
                 $table->boolean('marketing')->default(0);
             });
         }
