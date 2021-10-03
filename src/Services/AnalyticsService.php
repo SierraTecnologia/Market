@@ -8,7 +8,12 @@ use Market\Models\Transaction;
 
 class AnalyticsService
 {
-    public function balanceValues($transactions)
+    /**
+     * @return (int|mixed)[]
+     *
+     * @psalm-return array{refunds: 0|mixed, income: 0|mixed}
+     */
+    public function balanceValues($transactions): array
     {
         $collected = $transactions->groupBy(
             function ($item) {
@@ -34,7 +39,12 @@ class AnalyticsService
         return $balanceValues;
     }
 
-    public function getTransactionsByDays($transactions)
+    /**
+     * @return \Illuminate\Support\Collection[]
+     *
+     * @psalm-return array{days: \Illuminate\Support\Collection, transactions: \Illuminate\Support\Collection}
+     */
+    public function getTransactionsByDays($transactions): array
     {
         $collected = $transactions->groupBy(
             function ($item) {
@@ -56,12 +66,22 @@ class AnalyticsService
         ];
     }
 
+    /**
+     * @return Subscription[]|\Illuminate\Database\Eloquent\Collection
+     *
+     * @psalm-return \Illuminate\Database\Eloquent\Collection|array<Subscription>
+     */
     public function getSubscriptions()
     {
         return Subscription::all();
     }
 
-    public function mergeTransactionsAndSubscriptions($months)
+    /**
+     * @return (array|mixed)[]
+     *
+     * @psalm-return array{days: mixed|non-empty-list<mixed>, transactions: array<string, mixed>, subscriptions: array<string, mixed>|mixed}
+     */
+    public function mergeTransactionsAndSubscriptions($months): array
     {
         $daysCollection = [];
         $transactionsCollection = [];
@@ -84,7 +104,10 @@ class AnalyticsService
         ];
     }
 
-    public function getSubscriptionSum($date)
+    /**
+     * @param self $date
+     */
+    public function getSubscriptionSum(self $date)
     {
         $day = Carbon::parse($date)->format('Y-m-d');
         $subscriptionSoldOnDay = Subscription::where('created_at', 'like', $day.'%')->get();

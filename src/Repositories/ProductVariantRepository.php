@@ -27,6 +27,7 @@ class ProductVariantRepository
      *
      * @param Market\Models\Product $products
      * @param array                 $payload
+     * @param Product|ProductRepository|\Illuminate\Support\Collection $product
      *
      * @return Market\Models\Variant
      */

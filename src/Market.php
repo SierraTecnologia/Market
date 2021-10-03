@@ -42,6 +42,9 @@ class Market
         return $this->version;
     }
 
+    /**
+     * @return void
+     */
     protected function findVersion()
     {
         if (!is_null($this->version)) {
@@ -68,7 +71,7 @@ class Market
      *
      * @param string $string
      *
-     * @return string
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
      */
     public function url($string)
     {

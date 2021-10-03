@@ -44,8 +44,10 @@ class PlanService
 
     /**
      * Collect the new plans.
+     *
+     * @return void
      */
-    public function collectNewPlans()
+    public function collectNewPlans(): void
     {
         $sitecpaymentPlans = $this->sitecpaymentService->collectSierraTecnologiaPlans()->data;
         foreach ($sitecpaymentPlans as $plan) {
@@ -214,9 +216,9 @@ class PlanService
      *
      * @param Market\Models\Plan $plan
      *
-     * @return Illuminate\Support\Collection
+     * @return \Illuminate\Support\Collection
      */
-    public function getSubscribers($plan)
+    public function getSubscribers($plan): \Illuminate\Support\Collection
     {
         $userCollection = collect();
         $subscriptions = Subscription::where('sitecpayment_plan', $plan->sitecpayment_name)->get();
