@@ -21,7 +21,7 @@ class FavoriteController extends Controller
     /**
      * List all customer favorites
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function all()
     {
@@ -39,7 +39,7 @@ class FavoriteController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function add(Request $request)
     {
@@ -57,7 +57,7 @@ class FavoriteController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function remove(Request $request)
     {

@@ -23,7 +23,7 @@ class CartController extends Controller
     /**
      * Get cart contents
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function cart()
     {
@@ -43,7 +43,7 @@ class CartController extends Controller
     /**
      * Get cart item count
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function cartCount()
     {
@@ -57,7 +57,7 @@ class CartController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function changeCartCount(Request $request)
     {
@@ -71,7 +71,7 @@ class CartController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function addToCart(Request $request)
     {
@@ -89,7 +89,7 @@ class CartController extends Controller
      *
      * @param Request $request
      *
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function removeFromCart(Request $request)
     {
