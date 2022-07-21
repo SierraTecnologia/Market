@@ -20,7 +20,7 @@
                         ${!! $product->price !!}<br>
                         {!! $product->code !!}
                     </div>
-                    <div class="card-footer">
+                    <div class="box-footer panel-footer card-footer">
                         {!! $product->addToCartBtn('Add To Cart <span class="fa fa-shopping-cart"></span>', 'btn btn-primary btn-block') !!}
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                         <span class="plan-slogan">{{ $plan->slogan }}</span><br>
                         <span class="plan-description">{{ $plan->description }}</span>
                     </div>
-                    <div class="card-footer">
+                    <div class="box-footer panel-footer card-footer">
                         <a href="{{ $plan->href }}">Subscribe</a>
                     </div>
                 </div>
