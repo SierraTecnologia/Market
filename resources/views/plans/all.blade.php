@@ -14,7 +14,7 @@
                         <span class="plan-slogan">{{ $plan->slogan }}</span><br>
                         <span class="plan-description">{{ $plan->description }}</span>
                     </div>
-                    <div class="card-footer">
+                    <div class="box-footer panel-footer card-footer">
                         <a href="{{ $plan->href }}">Subscribe</a>
                     </div>
                 </div>

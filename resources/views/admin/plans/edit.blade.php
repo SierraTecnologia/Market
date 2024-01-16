@@ -22,7 +22,7 @@
                         <h2>$ {{ $plan->amount }} {{ strtoupper($plan->currency) }}/ {{ strtoupper($plan->interval) }}</h2>
                         <p><span class="plan-description">{{ $plan->description }}</span></p>
                     </div>
-                    <div class="card-footer">
+                    <div class="box-footer panel-footer card-footer">
                         <span class="plan-descriptor">{{ $plan->descriptor }}</span>
                     </div>
                 </div>

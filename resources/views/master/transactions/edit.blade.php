@@ -84,7 +84,7 @@
             <div class="col-md-6">
                 @if ($order && $order->hasActiveOrderItems())
                     <div class="card bg-light border-dark">
-                        <div class="card-header">
+                        <div class="box-header panel-heading card-header">
                            <a href="{{ url('master'.'/orders/'.$order->id.'/edit') }}">Order: #{{ $order->id }}</a>
                         </div>
                         <div class="card-body">
@@ -95,7 +95,7 @@
 
                 @if (!is_null($transaction->refund_date))
                     <div class="card bg-info mt-4">
-                        <div class="card-header">
+                        <div class="box-header panel-heading card-header">
                            Refunded
                         </div>
                         <div class="card-body">
